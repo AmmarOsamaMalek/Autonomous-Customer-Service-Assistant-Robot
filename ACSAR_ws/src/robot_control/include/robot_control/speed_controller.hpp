@@ -5,6 +5,9 @@
 #include <geometry_msgs/msg/twist_stamped.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
 #include <sensor_msgs/msg/joint_state.hpp>
+#include <nav_msgs/msg/odometry.hpp>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <tf2_ros/transform_broadcaster.h>
 #include <Eigen/Core>
 #include <Eigen/LU> 
 
@@ -23,6 +26,8 @@ private:
 
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_state_pub_;
 
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odm_pub_;
+
     double wheel_radius_;
     double wheel_width_;
     Eigen::MatrixXd forward_kinematics_matrix_;
@@ -34,6 +39,15 @@ private:
     double BL_wheel_prev_pos_;
 
     rclcpp::Time prev_time_;
+
+    double x_pos_;
+    double y_pos_;
+    double theta_;
+
+    nav_msgs::msg::Odometry odm_msg_;
+
+    std::unique_ptr<tf2_ros::TransformBroadcaster> transform_broadcaster_;
+    geometry_msgs::msg::TransformStamped transform_stamp_;
 };
 
 #endif
