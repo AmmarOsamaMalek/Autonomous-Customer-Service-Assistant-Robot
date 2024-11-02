@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<robot name="service_robot">
+    <!-- Materials -->
+    <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+    </material>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+
+    <transmission name="wheel_front_left_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_front_left_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_front_left_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    
+    <transmission name="wheel_front_right_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_front_right_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_front_right_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    
+    <transmission name="wheel_back_left_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_back_left_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_back_left_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    
+    <transmission name="wheel_back_right_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wheel_back_right_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wheel_back_right_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+
+
+
+    <ros2_control name="robot_system" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        
+        <!-- Front Left Wheel -->
+        <joint name="wheel_front_left_joint">
+            <command_interface name="velocity">
+                <param name="min">-1.0</param>
+                <param name="max">1.0</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Front Right Wheel -->
+        <joint name="wheel_front_right_joint">
+            <command_interface name="velocity">
+                <param name="min">-1.0</param>
+                <param name="max">1.0</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Back Left Wheel -->
+        <joint name="wheel_back_left_joint">
+            <command_interface name="velocity">
+                <param name="min">-1.0</param>
+                <param name="max">1.0</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Back Right Wheel -->
+        <joint name="wheel_back_right_joint">
+            <command_interface name="velocity">
+                <param name="min">-1.0</param>
+                <param name="max">1.0</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+
+
+    <!-- Add dummy root link -->
+    <link name="dummy_link">
+    </link>
+
+    <!-- Joint between dummy and base_link -->
+    <joint name="dummy_joint" type="fixed">
+        <parent link="dummy_link"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.35 0.35 0.1"/>  <!-- Changed from 0.4 to 0.35 -->
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.35 0.35 0.1"/>  <!-- Changed from 0.4 to 0.35 -->
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="3.0"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.0306" ixy="0" ixz="0" iyy="0.0306" iyz="0" izz="0.0613"/>
+            <!-- Inertia recalculated for new dimensions and mass -->
+        </inertial>
+    </link>
+
+    <gazebo reference="base_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <!-- Body with Gazebo properties -->
+    <link name="body">
+        <visual>
+            <geometry>
+                <cylinder length="0.5" radius="0.175"/>  <!-- Adjusted radius to match base -->
+            </geometry>
+            <origin xyz="0 0 0.25" rpy="0 0 0"/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.5" radius="0.175"/>
+            </geometry>
+            <origin xyz="0 0 0.25" rpy="0 0 0"/>
+        </collision>
+        <inertial>
+            <mass value="2.5"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.08" ixy="0" ixz="0" iyy="0.08" iyz="0" izz="0.05"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="body">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <!-- Wheels with enhanced properties -->
+    <!-- Front Left Wheel -->
+    <link name="wheel_front_left">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>  
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.375"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0009"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="wheel_front_left">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/Black</material>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <!-- Front Right Wheel -->
+    <link name="wheel_front_right">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>  
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.375"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="wheel_front_right">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/Black</material>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <!-- Back Left Wheel -->
+    <link name="wheel_back_left">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>  
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.375"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="wheel_back_left">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/Black</material>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <!-- Back Right Wheel -->
+    <link name="wheel_back_right">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>  
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.07"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.375"/>  <!-- Adjusted as part of total 7kg weight -->
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="wheel_back_right">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/Black</material>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <!-- Sensors -->
+    <!-- Kinect -->
+    <link name="kinect_link">
+        <visual>
+            <geometry>
+                <box size="0.064 0.278 0.04"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.064 0.278 0.04"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <!-- IMU -->
+    <link name="imu_link">
+        <visual>
+            <geometry>
+                <box size="0.02 0.02 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <inertial>
+            <mass value="0.01"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <!-- Ultrasonic -->
+    <link name="ultrasonic_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.02" radius="0.01"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <inertial>
+            <mass value="0.01"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <!-- Joints -->
+    <!-- Body to Base -->
+    <joint name="body_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="body"/>
+        <origin xyz="0 0 0.05"/>
+    </joint>
+
+    <!-- Wheels -->
+    <joint name="wheel_front_left_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_front_left"/>
+        <origin xyz="0.175 0.2 0" rpy="-1.5708 0 0"/>  <!-- Adjusted x from 0.2 to 0.175 -->
+        <axis xyz="0 0 1"/>
+        <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+
+    <joint name="wheel_front_right_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_front_right"/>
+        <origin xyz="0.175 -0.2 0" rpy="-1.5708 0 0"/>  <!-- Adjusted x from 0.2 to 0.175 -->
+        <axis xyz="0 0 1"/>
+        <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+
+    <!-- Add damping to continuous joints -->
+    <joint name="wheel_back_left_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_back_left"/>
+        <origin xyz="-0.175 0.2 0" rpy="-1.5708 0 0"/>  <!-- Adjusted x from -0.2 to -0.175 -->
+        <axis xyz="0 0 1"/>
+        <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+    
+
+    <joint name="wheel_back_right_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_back_right"/>
+        <origin xyz="-0.175 -0.2 0" rpy="-1.5708 0 0"/>  <!-- Adjusted x from -0.2 to -0.175 -->
+        <axis xyz="0 0 1"/>
+        <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+
+    <!-- Sensors Joints -->
+    <joint name="kinect_joint" type="fixed">
+        <parent link="body"/>
+        <child link="kinect_link"/>
+        <origin xyz="0 0 0.6" rpy="0 0 0"/>  <!-- Adjusted z to match total height -->
+    </joint>
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <origin xyz="0 0 0.05"/>
+    </joint>
+
+    <joint name="ultrasonic_joint" type="fixed">
+        <parent link="body"/>
+        <child link="ultrasonic_link"/>
+        <origin xyz="0.2 0 0.3" rpy="0 0 0"/>
+    </joint>
+    
+    <!-- Add gazebo_ros2_control plugin -->
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+           <robot_param>robot_description</robot_param>
+           <robot_param_node>robot_state_publisher</robot_param_node>
+            <parameters>$(find robot_control)/config/robot_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+    <!-- 
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <update_rate>100.0</update_rate>
+        
+        <left_joint>wheel_back_left_joint</left_joint>
+        <right_joint>wheel_back_right_joint</right_joint>
+        <wheel_separation>0.45</wheel_separation>
+        <wheel_diameter>0.2</wheel_diameter>
+        <robot_base_frame>base_link</robot_base_frame>
+        <publish_wheel_tf>true</publish_wheel_tf>
+        <publish_wheel_joint_state>true</publish_wheel_joint_state>
+        <wheel_acceleration>1.0</wheel_acceleration>
+        <wheel_torque>20</wheel_torque>
+        <odometry_frame>odom</odometry_frame>
+        <command_topic>cmd_vel</command_topic>
+        <odometry_topic>odom</odometry_topic>
+        <robot_namespace>/</robot_namespace>
+        <legacy_mode>false</legacy_mode>
+        <ros_debug_level>Debug</ros_debug_level>
+        <publish_odom_tf>true</publish_odom_tf>
+        <max_velocity>1.0</max_velocity>
+        <min_velocity>-1.0</min_velocity>
+    </plugin>
+-->
+
+    <!-- Joint properties -->
+    <gazebo reference="wheel_front_left_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <gazebo reference="wheel_front_right_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <gazebo reference="wheel_back_left_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <gazebo reference="wheel_back_right_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <!-- Kinect plugin with depth camera -->
+    <gazebo reference="kinect_link">
+        <sensor type="depth" name="kinect">
+            <update_rate>20</update_rate>
+            <camera>
+                <horizontal_fov>1.047198</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>3.0</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="kinect_camera_controller" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>20</updateRate>
+                <cameraName>kinect</cameraName>
+                <frameName>kinect_link</frameName>
+                <imageTopicName>rgb/image_raw</imageTopicName>
+                <depthImageTopicName>depth/image_raw</depthImageTopicName>
+                <pointCloudTopicName>depth/points</pointCloudTopicName>
+                <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+                <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+                <pointCloudCutoff>0.4</pointCloudCutoff>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <!-- IMU plugin -->
+    <gazebo reference="imu_link">
+        <sensor type="imu" name="imu_sensor">
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+                <updateRateHZ>100.0</updateRateHZ>
+                <topicName>imu/data</topicName>
+                <frameName>imu_link</frameName>
+            </plugin>
+        </sensor>
+    </gazebo>
+</robot>

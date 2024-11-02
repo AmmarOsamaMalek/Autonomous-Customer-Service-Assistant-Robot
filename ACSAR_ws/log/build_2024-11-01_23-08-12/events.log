@@ -1,0 +1,211 @@
+[0.000000] (-) TimerEvent: {}
+[0.000112] (robot_control) JobQueued: {'identifier': 'robot_control', 'dependencies': OrderedDict()}
+[0.000146] (robot_model) JobQueued: {'identifier': 'robot_model', 'dependencies': OrderedDict()}
+[0.000526] (robot_control) JobStarted: {'identifier': 'robot_control'}
+[0.008702] (robot_model) JobStarted: {'identifier': 'robot_model'}
+[0.014409] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'cmake'}
+[0.014812] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'build'}
+[0.015673] (robot_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control', '--', '-j12', '-l12'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1679'), ('SYSTEMD_EXEC_PID', '1845'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7823'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:21468'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/1822,unix/ammar-G5-5500:/tmp/.ICE-unix/1822'), ('INVOCATION_ID', '31d96d04f99541f7a59355a298afb0ea'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4GFSW2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a0ce2142-43c8-4a14-b9ea-0c3fadf1eeb1'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble')]), 'shell': False}
+[0.018795] (robot_model) JobProgress: {'identifier': 'robot_model', 'progress': 'cmake'}
+[0.020259] (robot_model) JobProgress: {'identifier': 'robot_model', 'progress': 'build'}
+[0.020574] (robot_model) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model', '--', '-j12', '-l12'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1679'), ('SYSTEMD_EXEC_PID', '1845'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7823'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:21468'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/1822,unix/ammar-G5-5500:/tmp/.ICE-unix/1822'), ('INVOCATION_ID', '31d96d04f99541f7a59355a298afb0ea'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4GFSW2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a0ce2142-43c8-4a14-b9ea-0c3fadf1eeb1'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble')]), 'shell': False}
+[0.048593] (robot_model) CommandEnded: {'returncode': 0}
+[0.050987] (robot_control) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target speed_controller\x1b[0m\n'}
+[0.064767] (robot_model) JobProgress: {'identifier': 'robot_model', 'progress': 'install'}
+[0.067711] (robot_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/speed_controller.dir/src/speed_controller.cpp.o\x1b[0m\n'}
+[0.071420] (robot_model) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1679'), ('SYSTEMD_EXEC_PID', '1845'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7823'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:21468'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/1822,unix/ammar-G5-5500:/tmp/.ICE-unix/1822'), ('INVOCATION_ID', '31d96d04f99541f7a59355a298afb0ea'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4GFSW2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a0ce2142-43c8-4a14-b9ea-0c3fadf1eeb1'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble')]), 'shell': False}
+[0.076584] (robot_model) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.076890] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/urdf\n'}
+[0.077068] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/urdf/service_robot.urdf.xml\n'}
+[0.077229] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/launch\n'}
+[0.077403] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/launch/display.launch.py\n'}
+[0.077549] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/launch/gazebo.launch.py\n'}
+[0.077664] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/rviz\n'}
+[0.077798] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/rviz/display.rviz\n'}
+[0.077897] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models\n'}
+[0.077997] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models\n'}
+[0.078093] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane\n'}
+[0.078191] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane/model-1_4.sdf\n'}
+[0.078293] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane/model.config\n'}
+[0.078391] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane/model.sdf\n'}
+[0.078690] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane/model-1_3.sdf\n'}
+[0.079327] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/ground_plane/model-1_2.sdf\n'}
+[0.079485] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun\n'}
+[0.079695] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun/model-1_4.sdf\n'}
+[0.080360] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun/model.config\n'}
+[0.080914] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun/model.sdf\n'}
+[0.081153] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun/model-1_3.sdf\n'}
+[0.081342] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/models/models/sun/model-1_2.sdf\n'}
+[0.081554] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/ament_index/resource_index/package_run_dependencies/robot_model\n'}
+[0.081732] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/ament_index/resource_index/parent_prefix_path/robot_model\n'}
+[0.082372] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/environment/ament_prefix_path.sh\n'}
+[0.082611] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/environment/ament_prefix_path.dsv\n'}
+[0.082804] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/environment/path.sh\n'}
+[0.083029] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/environment/path.dsv\n'}
+[0.083216] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/local_setup.bash\n'}
+[0.083698] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/local_setup.sh\n'}
+[0.083919] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/local_setup.zsh\n'}
+[0.084105] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/local_setup.dsv\n'}
+[0.084896] (robot_model) StdoutLine: {'line': b'-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.dsv\n'}
+[0.085784] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/ament_index/resource_index/packages/robot_model\n'}
+[0.086090] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/cmake/robot_modelConfig.cmake\n'}
+[0.086309] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/cmake/robot_modelConfig-version.cmake\n'}
+[0.086446] (robot_model) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.xml\n'}
+[0.086573] (robot_model) CommandEnded: {'returncode': 0}
+[0.099806] (-) TimerEvent: {}
+[0.112518] (robot_model) JobEnded: {'identifier': 'robot_model', 'rc': 0}
+[0.199903] (-) TimerEvent: {}
+[0.300179] (-) TimerEvent: {}
+[0.400474] (-) TimerEvent: {}
+[0.500771] (-) TimerEvent: {}
+[0.601074] (-) TimerEvent: {}
+[0.701391] (-) TimerEvent: {}
+[0.801702] (-) TimerEvent: {}
+[0.902020] (-) TimerEvent: {}
+[1.002361] (-) TimerEvent: {}
+[1.102670] (-) TimerEvent: {}
+[1.202971] (-) TimerEvent: {}
+[1.303278] (-) TimerEvent: {}
+[1.403587] (-) TimerEvent: {}
+[1.503887] (-) TimerEvent: {}
+[1.604192] (-) TimerEvent: {}
+[1.704506] (-) TimerEvent: {}
+[1.804805] (-) TimerEvent: {}
+[1.905103] (-) TimerEvent: {}
+[2.005402] (-) TimerEvent: {}
+[2.105700] (-) TimerEvent: {}
+[2.205993] (-) TimerEvent: {}
+[2.306287] (-) TimerEvent: {}
+[2.406581] (-) TimerEvent: {}
+[2.506878] (-) TimerEvent: {}
+[2.607177] (-) TimerEvent: {}
+[2.707476] (-) TimerEvent: {}
+[2.807770] (-) TimerEvent: {}
+[2.908068] (-) TimerEvent: {}
+[3.008361] (-) TimerEvent: {}
+[3.108659] (-) TimerEvent: {}
+[3.208954] (-) TimerEvent: {}
+[3.309244] (-) TimerEvent: {}
+[3.409530] (-) TimerEvent: {}
+[3.509834] (-) TimerEvent: {}
+[3.610114] (-) TimerEvent: {}
+[3.710410] (-) TimerEvent: {}
+[3.810713] (-) TimerEvent: {}
+[3.911062] (-) TimerEvent: {}
+[4.011381] (-) TimerEvent: {}
+[4.111680] (-) TimerEvent: {}
+[4.211976] (-) TimerEvent: {}
+[4.312273] (-) TimerEvent: {}
+[4.412573] (-) TimerEvent: {}
+[4.512871] (-) TimerEvent: {}
+[4.613166] (-) TimerEvent: {}
+[4.713459] (-) TimerEvent: {}
+[4.813762] (-) TimerEvent: {}
+[4.914057] (-) TimerEvent: {}
+[5.014347] (-) TimerEvent: {}
+[5.114638] (-) TimerEvent: {}
+[5.214932] (-) TimerEvent: {}
+[5.315224] (-) TimerEvent: {}
+[5.415517] (-) TimerEvent: {}
+[5.515819] (-) TimerEvent: {}
+[5.616138] (-) TimerEvent: {}
+[5.716443] (-) TimerEvent: {}
+[5.816725] (-) TimerEvent: {}
+[5.917016] (-) TimerEvent: {}
+[6.017304] (-) TimerEvent: {}
+[6.117604] (-) TimerEvent: {}
+[6.217921] (-) TimerEvent: {}
+[6.318211] (-) TimerEvent: {}
+[6.418516] (-) TimerEvent: {}
+[6.518886] (-) TimerEvent: {}
+[6.619168] (-) TimerEvent: {}
+[6.719459] (-) TimerEvent: {}
+[6.819761] (-) TimerEvent: {}
+[6.920060] (-) TimerEvent: {}
+[7.020368] (-) TimerEvent: {}
+[7.120697] (-) TimerEvent: {}
+[7.221023] (-) TimerEvent: {}
+[7.321329] (-) TimerEvent: {}
+[7.421609] (-) TimerEvent: {}
+[7.521891] (-) TimerEvent: {}
+[7.622176] (-) TimerEvent: {}
+[7.722458] (-) TimerEvent: {}
+[7.822741] (-) TimerEvent: {}
+[7.923044] (-) TimerEvent: {}
+[8.023324] (-) TimerEvent: {}
+[8.123598] (-) TimerEvent: {}
+[8.223876] (-) TimerEvent: {}
+[8.324152] (-) TimerEvent: {}
+[8.424430] (-) TimerEvent: {}
+[8.524705] (-) TimerEvent: {}
+[8.624979] (-) TimerEvent: {}
+[8.725257] (-) TimerEvent: {}
+[8.825535] (-) TimerEvent: {}
+[8.925806] (-) TimerEvent: {}
+[9.026078] (-) TimerEvent: {}
+[9.126367] (-) TimerEvent: {}
+[9.226634] (-) TimerEvent: {}
+[9.326877] (-) TimerEvent: {}
+[9.427151] (-) TimerEvent: {}
+[9.527429] (-) TimerEvent: {}
+[9.627710] (-) TimerEvent: {}
+[9.727993] (-) TimerEvent: {}
+[9.828275] (-) TimerEvent: {}
+[9.928557] (-) TimerEvent: {}
+[10.028834] (-) TimerEvent: {}
+[10.129116] (-) TimerEvent: {}
+[10.229395] (-) TimerEvent: {}
+[10.329674] (-) TimerEvent: {}
+[10.429956] (-) TimerEvent: {}
+[10.530235] (-) TimerEvent: {}
+[10.630516] (-) TimerEvent: {}
+[10.730794] (-) TimerEvent: {}
+[10.831081] (-) TimerEvent: {}
+[10.931356] (-) TimerEvent: {}
+[11.031642] (-) TimerEvent: {}
+[11.131919] (-) TimerEvent: {}
+[11.232197] (-) TimerEvent: {}
+[11.332472] (-) TimerEvent: {}
+[11.432749] (-) TimerEvent: {}
+[11.533044] (-) TimerEvent: {}
+[11.633378] (-) TimerEvent: {}
+[11.733645] (-) TimerEvent: {}
+[11.813166] (robot_control) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable speed_controller\x1b[0m\n'}
+[11.833767] (-) TimerEvent: {}
+[11.934042] (-) TimerEvent: {}
+[12.034287] (-) TimerEvent: {}
+[12.134543] (-) TimerEvent: {}
+[12.234864] (-) TimerEvent: {}
+[12.335112] (-) TimerEvent: {}
+[12.346536] (robot_control) StdoutLine: {'line': b'[100%] Built target speed_controller\n'}
+[12.353942] (robot_control) CommandEnded: {'returncode': 0}
+[12.370068] (robot_control) JobProgress: {'identifier': 'robot_control', 'progress': 'install'}
+[12.370298] (robot_control) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1679'), ('SYSTEMD_EXEC_PID', '1845'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7823'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:21468'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/1822,unix/ammar-G5-5500:/tmp/.ICE-unix/1822'), ('INVOCATION_ID', '31d96d04f99541f7a59355a298afb0ea'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.4GFSW2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a0ce2142-43c8-4a14-b9ea-0c3fadf1eeb1'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/opt/ros/humble')]), 'shell': False}
+[12.376209] (robot_control) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.376434] (robot_control) StdoutLine: {'line': b'-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/robot_control/speed_controller\n'}
+[12.382109] (robot_control) StdoutLine: {'line': b'-- Set runtime path of "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/robot_control/speed_controller" to ""\n'}
+[12.382270] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/include\n'}
+[12.382377] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/include/robot_control\n'}
+[12.382464] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/include/robot_control/speed_controller.hpp\n'}
+[12.382557] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config\n'}
+[12.382640] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/robot_controllers.yaml\n'}
+[12.382718] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch\n'}
+[12.382819] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/controller.launch.py\n'}
+[12.382894] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control\n'}
+[12.382955] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control\n'}
+[12.383015] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh\n'}
+[12.383074] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv\n'}
+[12.383133] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.sh\n'}
+[12.383192] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.dsv\n'}
+[12.383251] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.bash\n'}
+[12.383310] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.sh\n'}
+[12.383377] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.zsh\n'}
+[12.383436] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.dsv\n'}
+[12.383494] (robot_control) StdoutLine: {'line': b'-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.dsv\n'}
+[12.383567] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control\n'}
+[12.383664] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake\n'}
+[12.383760] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake\n'}
+[12.383823] (robot_control) StdoutLine: {'line': b'-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.xml\n'}
+[12.384393] (robot_control) CommandEnded: {'returncode': 0}
+[12.410509] (robot_control) JobEnded: {'identifier': 'robot_control', 'rc': 0}
+[12.411311] (-) EventReactorShutdown: {}

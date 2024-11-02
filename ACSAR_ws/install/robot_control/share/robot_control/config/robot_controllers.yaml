@@ -1,0 +1,67 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    # Broadcast robot's state
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    service_robot_controller:
+      type: "velocity_controllers/JointGroupVelocityController"
+
+    # Main controller for four-wheel drive
+    four_wheel_base_controller:
+      type: forward_command_controller/ForwardCommandController
+
+service_robot_controller:
+  ros__parameters:
+    joints:
+      - wheel_front_left_joint
+      - wheel_back_left_joint
+      - wheel_front_right_joint
+      - wheel_back_right_joint 
+
+
+# Configuration for four-wheel base controller
+four_wheel_base_controller:
+  ros__parameters:
+    joints:
+      - wheel_front_left_joint
+      - wheel_back_left_joint
+      - wheel_front_right_joint
+      - wheel_back_right_joint
+    interface_name: velocity
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+    publish_rate: 50.0
+    cmd_vel_timeout: 0.5
+    base_frame_id: base_link
+    use_stamped_vel: false
+    
+    # Velocity limits
+    linear:
+      x:
+        has_velocity_limits: true
+        max_velocity: 2.0  # m/s
+        min_velocity: -2.0 # m/s
+        has_acceleration_limits: true
+        max_acceleration: 2.0 # m/s^2
+        min_acceleration: -2.0 # m/s^2
+      y:
+        has_velocity_limits: true
+        max_velocity: 2.0
+        min_velocity: -2.0
+        has_acceleration_limits: true
+        max_acceleration: 2.0
+        min_acceleration: -2.0
+    angular:
+      z:
+        has_velocity_limits: true
+        max_velocity: 2.0  # rad/s
+        min_velocity: -2.0 # rad/s
+        has_acceleration_limits: true
+        max_acceleration: 2.0 # rad/s^2
+        min_acceleration: -2.0 # rad/s^2

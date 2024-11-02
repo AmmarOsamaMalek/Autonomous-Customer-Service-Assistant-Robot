@@ -1,0 +1,27 @@
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:164[m[K,
+                 from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include/robot_control/speed_controller.hpp:7[m[K,
+                 from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:1[m[K:
+/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h: In instantiation of ‘[01m[Kvoid Eigen::PlainObjectBase<Derived>::_init2(Eigen::Index, Eigen::Index, typename Eigen::internal::enable_if<(typename Eigen::internal::dense_xpr_base<Derived>::type::SizeAtCompileTime != 2), T0>::type*) [with T0 = double; T1 = double; Derived = Eigen::Matrix<double, 2, 2>; Eigen::Index = long int; typename Eigen::internal::enable_if<(typename Eigen::internal::dense_xpr_base<Derived>::type::SizeAtCompileTime != 2), T0>::type = double; typename Eigen::internal::dense_xpr_base<Derived>::type = Eigen::MatrixBase<Eigen::Matrix<double, 2, 2> >; typename Eigen::internal::traits<T>::XprKind = Eigen::MatrixXpr][m[K’:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:340:35:[m[K   required from ‘[01m[KEigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const T0&, const T1&) [with T0 = double; T1 = double; _Scalar = double; int _Rows = 2; int _Cols = 2; int _Options = 0; int _MaxRows = 2; int _MaxCols = 2][m[K’
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:37:76:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:807:27:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: FLOATING_POINT_ARGUMENT_PASSED__INTEGER_WAS_EXPECTED
+  807 |       EIGEN_STATIC_ASSERT([01;31m[Kt0_is_integer_alike[m[K &&
+      |                           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:33:54:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_STATIC_ASSERT[m[K’
+   33 |     #define EIGEN_STATIC_ASSERT(X,MSG) static_assert([01;36m[KX[m[K,#MSG);
+      |                                                      [01;36m[K^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:807:27:[m[K [01;36m[Knote: [m[K‘[01m[Kt0_is_integer_alike[m[K’ evaluates to false
+  807 |       EIGEN_STATIC_ASSERT([01;36m[Kt0_is_integer_alike[m[K &&
+      |                           [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:33:54:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_STATIC_ASSERT[m[K’
+   33 |     #define EIGEN_STATIC_ASSERT(X,MSG) static_assert([01;36m[KX[m[K,#MSG);
+      |                                                      [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:273[m[K,
+                 from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include/robot_control/speed_controller.hpp:7[m[K,
+                 from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:332:35:[m[K [01;35m[Kwarning: [m[Kinline function ‘[01m[Kconst Eigen::Inverse<Derived> Eigen::MatrixBase<Derived>::inverse() const [with Derived = Eigen::Matrix<double, 2, 2>][m[K’ used but never defined
+  332 |     inline const Inverse<Derived> [01;35m[Kinverse[m[K() const;
+      |                                   [01;35m[K^~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/speed_controller.dir/build.make:76: CMakeFiles/speed_controller.dir/src/speed_controller.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/speed_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
