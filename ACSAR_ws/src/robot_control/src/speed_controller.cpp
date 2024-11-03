@@ -22,7 +22,7 @@ SpeedController::SpeedController(const std::string & name) : Node(name),
     wheel_cmd_pub_ = create_publisher<std_msgs::msg::Float64MultiArray>(
         "/four_wheel_base_controller/commands", 10);
 
-    joint_state_pub_ = create_subscription<sensor_msgs::msg::JointState>(
+    joint_state_sub_ = create_subscription<sensor_msgs::msg::JointState>(
         "/joint_states",10,std::bind(&SpeedController::jointCallback,this,_1));
 
     odm_pub_ = create_publisher<nav_msgs::msg::Odometry>(
@@ -45,8 +45,8 @@ SpeedController::SpeedController(const std::string & name) : Node(name),
         double W = wheel_width_;
         
         forward_kinematics_matrix_ << 
-            r/4,    r/4,    r/4,    r/4,      // x˙ equation
-            -r/(2*W), -r/(2*W), r/(2*W),  r/(2*W);    // θ˙ equation
+          r/2,    r/2,    r/2,    r/2,          // v equation
+         -r/W,   -r/W,    r/W,    r/W;  
             
         // Calculate inverse kinematics matrix (pseudo-inverse since we have more outputs than inputs)
         // Calculate pseudo-inverse using SVD
@@ -60,15 +60,11 @@ SpeedController::SpeedController(const std::string & name) : Node(name),
     odm_msg_.pose.pose.orientation.x = 0.0;
     odm_msg_.pose.pose.orientation.y = 0.0;
     odm_msg_.pose.pose.orientation.z = 0.0;
-    odm_msg_.pose.pose.orientation.w = 0.0;
+    odm_msg_.pose.pose.orientation.w = 1.0;
 
     transform_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
     transform_stamp_.header.frame_id = "odm";
     transform_stamp_.child_frame_id = "base_link";
-    transform_stamp_.transform.rotation.x = 0.0;
-    transform_stamp_.transform.rotation.y = 0.0;
-    transform_stamp_.transform.rotation.z = 0.0;
-    transform_stamp_.transform.rotation.w = 0.0;
     }
    
 
@@ -104,7 +100,7 @@ void SpeedController::jointCallback(const sensor_msgs::msg::JointState & msg)
 
     rclcpp::Time msg_time = msg.header.stamp;
     rclcpp::Duration dt = msg_time - prev_time_;
-//RCLCPP_INFO(this->get_logger(),"msg_time = %f  prev_time_ = %f",msg_time,prev_time_);
+
     FL_wheel_prev_pos_ = msg.position.at(0);
     BL_wheel_prev_pos_ = msg.position.at(1);
     FR_wheel_prev_pos_ = msg.position.at(2);
@@ -117,11 +113,11 @@ void SpeedController::jointCallback(const sensor_msgs::msg::JointState & msg)
     double delta_BL_wheel = dp_BL_wheel / dt.seconds();
     double delta_BR_wheel = dp_BR_wheel / dt.seconds();
 
-    double robot_linear_velocity = (wheel_radius_  * (delta_FL_wheel + delta_FR_wheel + delta_BL_wheel + delta_BR_wheel)) / 4.0;
-    double robot_angular_velocity = (wheel_radius_ * (delta_BR_wheel - delta_FR_wheel + delta_BL_wheel - delta_FL_wheel )) / (2.0 * wheel_width_);
+    double robot_linear_velocity = (wheel_radius_  * (delta_FL_wheel + delta_FR_wheel + delta_BL_wheel + delta_BR_wheel)) / 2.0;
+    double robot_angular_velocity = (wheel_radius_ * (delta_BR_wheel - delta_FR_wheel + delta_BL_wheel - delta_FL_wheel )) / (wheel_width_);
 
-    double d_s = (wheel_radius_  * (dp_FL_wheel + dp_FR_wheel + dp_BL_wheel + dp_BR_wheel)) / 4.0;
-    double d_theta = (wheel_radius_ * ( dp_BR_wheel - dp_FR_wheel + dp_BL_wheel - dp_FL_wheel )) / (2.0 * wheel_width_);
+    double d_s = (wheel_radius_  * (dp_FL_wheel + dp_FR_wheel + dp_BL_wheel + dp_BR_wheel)) / 2.0;
+    double d_theta = (wheel_radius_ * ( dp_BR_wheel - dp_FR_wheel + dp_BL_wheel - dp_FL_wheel )) / ( wheel_width_);
 
     theta_ += d_theta;
     x_pos_ += d_s * cos(theta_);
