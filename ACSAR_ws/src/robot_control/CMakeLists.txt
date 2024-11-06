@@ -25,8 +25,12 @@ add_definitions(${EIGEN3_DEFINITIONS})
 add_executable(speed_controller src/speed_controller.cpp)
 ament_target_dependencies(speed_controller rclcpp std_msgs geometry_msgs Eigen3 sensor_msgs nav_msgs tf2 tf2_ros)
 
+add_executable(noisy_controller src/noisy_controller.cpp)
+ament_target_dependencies(noisy_controller rclcpp  geometry_msgs Eigen3 sensor_msgs nav_msgs tf2 tf2_ros)
+
 install(TARGETS
   speed_controller
+  noisy_controller
   DESTINATION lib/${PROJECT_NAME}
 )
 

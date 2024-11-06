@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import RegisterEventHandler, DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import RegisterEventHandler, DeclareLaunchArgument, OpaqueFunction 
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
 from launch_ros.actions import Node
@@ -7,6 +7,23 @@ from launch_ros.substitutions import FindPackageShare
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
+
+def noisy_controller(context,*argc,**kwargv):
+    wheel_radius = float(LaunchConfiguration("wheel_radius").perform(context))
+    wheel_width = float(LaunchConfiguration("wheel_width").perform(context))
+    wheel_radius_error = float(LaunchConfiguration("wheel_radius_error").perform(context))
+    wheel_width_error = float(LaunchConfiguration("wheel_width_error").perform(context))
+
+    noisy_controller_cpp = Node(
+        package="robot_control",
+        executable="noisy_controller",
+        parameters=[
+            {"wheel_radius" : wheel_radius + wheel_radius_error,
+             "wheel_width" : wheel_width + wheel_width_error}
+        ]
+    )
+    return  [noisy_controller_cpp]
+    
 def generate_launch_description():
     # Declare launch arguments
     use_sim_time = DeclareLaunchArgument(
@@ -23,6 +40,16 @@ def generate_launch_description():
     wheel_width_arg = DeclareLaunchArgument(
         "wheel_width",
         default_value="0.35"
+    )
+    
+    wheel_radius_error_arg = DeclareLaunchArgument(
+        "wheel_radius_error",
+        default_value="0.005"
+    )
+    
+    wheel_width_error_arg = DeclareLaunchArgument(
+        "wheel_width_error",
+        default_value="0.02"
     )
 
     wheel_radius = LaunchConfiguration("wheel_radius")
@@ -93,16 +120,21 @@ def generate_launch_description():
     )
     
 
+    noisy_controller_launch = OpaqueFunction(function=noisy_controller)
+    
     nodes = [
         use_sim_time,
         wheel_radius_arg,
         wheel_width_arg,
+        wheel_radius_error_arg,
+        wheel_width_error_arg,
         robot_state_publisher,
         joint_state_broadcaster_spawner,
         service_robot_speed_controller,
         robot_controller_spawner,
         control_node,
-        speed_controller_cpp
+        speed_controller_cpp,
+        noisy_controller_launch
     ]
 
     return LaunchDescription(nodes)
