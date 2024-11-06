@@ -20,33 +20,44 @@ private:
     void velCallback(const geometry_msgs::msg::TwistStamped & msg);
     void jointCallback(const sensor_msgs::msg::JointState & msg);
 
+    // Subscribers
     rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr vel_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_state_sub_;
 
+    // Publishers
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr wheel_cmd_pub_;
-
-    rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_state_pub_;
-
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odm_pub_;
 
+    // Transform broadcaster
+    std::unique_ptr<tf2_ros::TransformBroadcaster> transform_broadcaster_;
+
+    // Robot parameters
     double wheel_radius_;
     double wheel_width_;
-    Eigen::MatrixXd forward_kinematics_matrix_;
-    Eigen::MatrixXd inverse_kinematics_matrix_;
 
+    //double max_velocity_linear_;
+    //double max_velocity_angular_;
+
+    // Previous wheel positions
     double FR_wheel_prev_pos_;
     double FL_wheel_prev_pos_;
     double BR_wheel_prev_pos_;
     double BL_wheel_prev_pos_;
 
-    rclcpp::Time prev_time_;
-
+    // Robot pose
     double x_pos_;
     double y_pos_;
     double theta_;
 
-    nav_msgs::msg::Odometry odm_msg_;
+    // Timing
+    rclcpp::Time prev_time_;
 
-    std::unique_ptr<tf2_ros::TransformBroadcaster> transform_broadcaster_;
+    // Kinematics matrices
+    Eigen::MatrixXd forward_kinematics_matrix_;
+    Eigen::MatrixXd inverse_kinematics_matrix_;
+
+    // Messages
+    nav_msgs::msg::Odometry odm_msg_;
     geometry_msgs::msg::TransformStamped transform_stamp_;
 };
 
