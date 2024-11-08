@@ -28,9 +28,15 @@ ament_target_dependencies(speed_controller rclcpp std_msgs geometry_msgs Eigen3 
 add_executable(noisy_controller src/noisy_controller.cpp)
 ament_target_dependencies(noisy_controller rclcpp  geometry_msgs Eigen3 sensor_msgs nav_msgs tf2 tf2_ros)
 
+add_executable(imu_republisher src/imu_republisher.cpp)
+ament_target_dependencies(imu_republisher rclcpp std_msgs sensor_msgs nav_msgs)
+
+
+
 install(TARGETS
   speed_controller
   noisy_controller
+  imu_republisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
