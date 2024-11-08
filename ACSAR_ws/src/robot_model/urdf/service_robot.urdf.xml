@@ -423,7 +423,7 @@
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
            <robot_param>robot_description</robot_param>
            <robot_param_node>robot_state_publisher</robot_param_node>
-            <parameters>$(find robot_control)/config/robot_controllers.yaml</parameters>
+            <parameters>$(find robot_control)/config/diff_controller.yaml</parameters>
         </plugin>
     </gazebo>
 
