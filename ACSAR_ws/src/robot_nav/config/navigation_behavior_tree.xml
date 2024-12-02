@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryFallback name="NavigationRecovery">
+      <Sequence name="NavigateWithObstacleAvoidance">
+        <ComputePathToPose goal="{goal}" start="{start}" planner_plugin="GridBased"/>
+        <PipelineSequence name="ObstacleHandling">
+          <RateController hz="10.0">
+            <FollowPath path="{path}" controller_plugin="FollowPath"/>
+          </RateController>
+          
+          <ReactiveSequence name="ObstacleCheck">
+            <CheckObstacle/>
+            <ClearLocalCostmap service_name="local_costmap/clear_costmap_service"/>
+            <Spin spin_duration="1.0"/>
+          </ReactiveSequence>
+        </PipelineSequence>
+      </Sequence>
+      
+      <Recovery name="Recovery1" number_of_retries="3">
+        <ClearLocalCostmap service_name="local_costmap/clear_costmap_service"/>
+      </Recovery>
+      
+      <Recovery name="Recovery2" number_of_retries="2">
+        <Spin spin_duration="2.0"/>
+      </Recovery>
+    </RecoveryFallback>
+  </BehaviorTree>
+</root>

@@ -28,7 +28,5 @@ def generate_launch_description():
     )
     
     return LaunchDescription([
-        static_transform_publisher,
-        robot_localization,
-        imu_republisher_cpp
+        robot_localization
     ])
