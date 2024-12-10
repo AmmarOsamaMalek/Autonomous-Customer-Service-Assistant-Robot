@@ -16,11 +16,18 @@ def generate_launch_description():
     model_path = os.path.join(robot_model,"models")
     model_path += pathsep + os.path.join(robot_model_prefix,"share")
     
-    env_variable = SetEnvironmentVariable("GAZEB_MODEL_PATH",model_path)
+    env_variable = SetEnvironmentVariable("GAZEBO_MODEL_PATH",model_path)
+    
+    # Add world file argument
+    world_arg = DeclareLaunchArgument(
+        name="world",
+        default_value="/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/worlds/worlds/ACSAR.world",
+        description="Absolute path to Gazebo world file"
+    )
     
     model_arg = DeclareLaunchArgument(
         name="model",
-        default_value=os.path.join(robot_model, "urdf", "service_robot.urdf.xml" ),
+        default_value=os.path.join(robot_model, "urdf", "service_robot.urdf.xml"),
         description="Absolute path to robot URDF file"
     )
     
@@ -32,12 +39,18 @@ def generate_launch_description():
         parameters=[{"robot_description": robot_description}]
     )
     
-    start_gazebo_server = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(
+    # Modify Gazebo server launch to include world file
+    start_gazebo_server = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory("gazebo_ros"),
+            "launch",
+            "gzserver.launch.py"
+        )),
+        launch_arguments=[('world', LaunchConfiguration('world'))]
+    )
+    
+    start_gazebo_client = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(
         get_package_share_directory("gazebo_ros"),
-        "launch",
-        "gzserver.launch.py"
-    )))
-    start_gazebo_client = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("gazebo_ros"),
         "launch",
         "gzclient.launch.py")))
     
@@ -50,6 +63,7 @@ def generate_launch_description():
     
     return LaunchDescription([
         env_variable,
+        world_arg,
         model_arg,
         robot_state_publisher,
         start_gazebo_server,
