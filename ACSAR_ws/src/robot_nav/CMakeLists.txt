@@ -15,28 +15,15 @@ find_package(nav2_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 
-# Add executable
-add_executable(navigator src/navigator.cpp)
 
-ament_target_dependencies(navigator
-  rclcpp
-  rclcpp_action
-  geometry_msgs
-  nav2_msgs
-  tf2_ros
-  tf2_geometry_msgs
-)
+
 
 install(
   DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
 
-# Install
-install(TARGETS
-  navigator
-  DESTINATION lib/${PROJECT_NAME}
-)
+
 
 
 ament_package()

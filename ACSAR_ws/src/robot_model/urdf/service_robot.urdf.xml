@@ -19,6 +19,7 @@
         </joint>
         <actuator name="wheel_front_left_motor">
             <mechanicalReduction>1</mechanicalReduction>
+            <maxEffort>0.32</maxEffort>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </actuator>
     </transmission>
@@ -30,6 +31,7 @@
         </joint>
         <actuator name="wheel_front_right_motor">
             <mechanicalReduction>1</mechanicalReduction>
+            <maxEffort>0.32</maxEffort>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </actuator>
     </transmission>
@@ -41,6 +43,7 @@
         </joint>
         <actuator name="wheel_back_left_motor">
             <mechanicalReduction>1</mechanicalReduction>
+            <maxEffort>0.32</maxEffort>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </actuator>
     </transmission>
@@ -52,6 +55,7 @@
         </joint>
         <actuator name="wheel_back_right_motor">
             <mechanicalReduction>1</mechanicalReduction>
+            <maxEffort>0.32</maxEffort>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </actuator>
     </transmission>
@@ -66,8 +70,8 @@
         <!-- Front Left Wheel -->
         <joint name="wheel_front_left_joint">
             <command_interface name="velocity">
-                <param name="min">-2.0</param>
-                <param name="max">2.0</param>
+                <param name="min">-0.44</param>
+                <param name="max">0.44</param>
             </command_interface>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
@@ -76,8 +80,8 @@
         <!-- Front Right Wheel -->
         <joint name="wheel_front_right_joint">
             <command_interface name="velocity">
-                <param name="min">-2.0</param>
-                <param name="max">2.0</param>
+                <param name="min">-0.44</param>
+                <param name="max">0.44</param>
             </command_interface>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
@@ -86,8 +90,8 @@
         <!-- Back Left Wheel -->
         <joint name="wheel_back_left_joint">
             <command_interface name="velocity">
-                <param name="min">-2.0</param>
-                <param name="max">2.0</param>
+                <param name="min">-0.44</param>
+                <param name="max">0.44</param>
             </command_interface>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
@@ -96,8 +100,8 @@
         <!-- Back Right Wheel -->
         <joint name="wheel_back_right_joint">
             <command_interface name="velocity">
-                <param name="min">-2.0</param>
-                <param name="max">2.0</param>
+                <param name="min">-0.44</param>
+                <param name="max">0.44</param>
             </command_interface>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
@@ -122,7 +126,7 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="3.2"/>  <!-- Adjusted as part of total 7kg weight -->
+            <mass value="3.0"/>  
             <inertia ixx="0.0306" ixy="0" ixz="0" iyy="0.0306" iyz="0" izz="0.0613"/>
             <!-- Inertia recalculated for new dimensions and mass -->
         </inertial>
@@ -142,16 +146,16 @@
             <geometry>
                 <box size="0.05 0.35 0.35"/>  <!-- Swapped dimensions to be vertical -->
             </geometry>
-            <origin xyz="0.15 0 0.175" rpy="0 0 0"/>  <!-- Adjusted origin to center vertically -->
+            <origin xyz="-0.15 0 0.175" rpy="0 0 0"/>  <!-- Adjusted origin to center vertically -->
         </visual>
         <collision>
             <geometry>
                 <box size="0.05 0.35 0.35"/>
             </geometry>
-            <origin xyz="0.15 0 0.175" rpy="0 0 0"/>
+            <origin xyz="-0.15 0 0.175" rpy="0 0 0"/>
         </collision>
         <inertial>
-            <mass value="3.2"/>
+            <mass value="4.2"/>
             <inertia ixx="0.08" ixy="0" ixz="0" iyy="0.08" iyz="0" izz="0.05"/>
         </inertial>
     </link>
@@ -180,7 +184,7 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.5"/>
+            <mass value="0.2"/>
             <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
         </inertial>
     </link>
@@ -244,8 +248,8 @@
     </link>
 
     <gazebo reference="wheel_front_left">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>0.7</mu1>  <!-- Static friction -->
+        <mu2>0.3</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
         <fdir1>1 0 0</fdir1>
@@ -273,8 +277,8 @@
     </link>
 
     <gazebo reference="wheel_front_right">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>0.7</mu1>  <!-- Static friction -->
+        <mu2>0.3</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
         <fdir1>1 0 0</fdir1>
@@ -302,8 +306,8 @@
     </link>
 
     <gazebo reference="wheel_back_left">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>0.7</mu1>  <!-- Static friction -->
+        <mu2>0.3</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
         <fdir1>1 0 0</fdir1>
@@ -331,8 +335,8 @@
     </link>
 
     <gazebo reference="wheel_back_right">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>0.7</mu1>  <!-- Static friction -->
+        <mu2>0.3</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
         <fdir1>1 0 0</fdir1>
@@ -366,7 +370,6 @@
             <geometry>
                 <cylinder length="0.04" radius="0.035"/>  <!-- Typical small LIDAR dimensions -->
             </geometry>
-            <material name="black"/>
         </visual>
         <collision>
             <geometry>
@@ -433,7 +436,7 @@
     <joint name="body_joint" type="fixed">
         <parent link="base_link"/>
         <child link="body"/>
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>  <!-- Keeping the same z-offset -->
+        <origin xyz="0 0 0.05" rpy="0 0 3.14"/>  <!-- Keeping the same z-offset -->
     </joint>
 
      <!-- Joints for new front plates -->
@@ -455,13 +458,14 @@
         <origin xyz="0.0 0 0.08" rpy="0 0 0"/>
     </joint>
 
-    <!-- Wheels -->
+     <!-- Wheels -->
     <joint name="wheel_front_left_joint" type="continuous">
         <parent link="base_link"/>
         <child link="wheel_front_left"/>
         <origin xyz="0.175 0.2 0" rpy="-1.5708 0 0"/>  
         <axis xyz="0 0 1"/>
         <dynamics damping="0.1" friction="0.1"/>
+        <limit effort="0.32" velocity="0.44"/>  <!-- Added torque limit of 0.32 N.m -->
     </joint>
 
     <joint name="wheel_front_right_joint" type="continuous">
@@ -470,17 +474,17 @@
         <origin xyz="0.175 -0.2 0" rpy="-1.5708 0 0"/>  
         <axis xyz="0 0 1"/>
         <dynamics damping="0.1" friction="0.1"/>
+        <limit effort="0.32" velocity="0.44"/>  <!-- Added torque limit of 0.32 N.m -->
     </joint>
 
-    <!-- Add damping to continuous joints -->
     <joint name="wheel_back_left_joint" type="continuous">
         <parent link="base_link"/>
         <child link="wheel_back_left"/>
         <origin xyz="-0.175 0.2 0" rpy="-1.5708 0 0"/>  
         <axis xyz="0 0 1"/>
         <dynamics damping="0.1" friction="0.1"/>
+        <limit effort="0.32" velocity="0.44"/>  <!-- Added torque limit of 0.32 N.m -->
     </joint>
-    
 
     <joint name="wheel_back_right_joint" type="continuous">
         <parent link="base_link"/>
@@ -488,20 +492,22 @@
         <origin xyz="-0.175 -0.2 0" rpy="-1.5708 0 0"/>  
         <axis xyz="0 0 1"/>
         <dynamics damping="0.1" friction="0.1"/>
+        <limit effort="0.32" velocity="0.44"/>  <!-- Added torque limit of 0.32 N.m -->
     </joint>
+
 
     <!-- Sensors Joints -->
     <!-- Updated Sensor Placements -->
     <joint name="lidar_joint" type="fixed">
         <parent link="body"/>
         <child link="lidar_link"/>
-        <origin xyz="0.14 0.0 0.36" rpy="0 0 0"/>  <!-- Moved to top of body -->
+        <origin xyz="-0.15 0.0 0.37" rpy="0 0 0"/>  <!-- Moved to top of body -->
     </joint>
 
     <joint name="camera_joint" type="fixed">
         <parent link="body"/>
         <child link="camera_link"/>
-        <origin xyz="0.1875 0 0.30" rpy="0 0 0"/>  <!-- Repositioned at back surface -->
+        <origin xyz="-0.1875 0 0.32" rpy="0 0 0"/>  <!-- Repositioned at back surface -->
     </joint>
 
     <joint name="imu_joint" type="fixed">
@@ -596,9 +602,9 @@
 
                 <resolution>1.000000</resolution>
 
-                <min_angle>0.000000</min_angle>
+                <min_angle>0.000000</min_angle> <!-- -1.9 -->
 
-                <max_angle>6.280000</max_angle>
+                <max_angle>6.28318530</max_angle> <!-- -4.3 -->
 
                 </horizontal>
 
