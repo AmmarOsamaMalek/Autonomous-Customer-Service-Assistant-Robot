@@ -14,9 +14,27 @@ find_package(sensor_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+find_package(nav2_common REQUIRED)
+find_package(nav2_core REQUIRED)
+find_package(nav2_costmap_2d REQUIRED)
+find_package(nav2_behavior_tree REQUIRED)
 
 
 
+install(PROGRAMS
+  scripts/Autonomous_navigation.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/simple_nav.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/Speach_recorder.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 install(
   DIRECTORY launch config

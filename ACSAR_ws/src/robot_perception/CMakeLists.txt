@@ -21,5 +21,14 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+install(PROGRAMS
+  scripts/process_image.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/detect_ball.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
