@@ -507,7 +507,7 @@
     <joint name="camera_joint" type="fixed">
         <parent link="body"/>
         <child link="camera_link"/>
-        <origin xyz="-0.1875 0 0.32" rpy="0 0 0"/>  <!-- Repositioned at back surface -->
+        <origin xyz="-0.1875 0 0.30" rpy="0 0 3.14"/>  <!-- Repositioned at back surface -->
     </joint>
 
     <joint name="imu_joint" type="fixed">
@@ -590,7 +590,7 @@
 
             <visualize>true</visualize>
 
-            <update_rate>5</update_rate>
+            <update_rate>10</update_rate>
 
             <ray>
 
