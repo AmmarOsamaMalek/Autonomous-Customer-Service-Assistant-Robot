@@ -12,6 +12,7 @@ controller_manager:
 
 diff_drive_controller:
   ros__parameters:
+    publish_wheel_joint_controller_state: true
     odom_frame_id: "odom"
     base_frame_id: "base_link"
     map_frame_id: "map"

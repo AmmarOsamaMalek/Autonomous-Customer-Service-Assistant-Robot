@@ -16,39 +16,35 @@ find_package(nav_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(Eigen3 REQUIRED)
+
 
 include_directories(include)
 include_directories(${EIGEN3_INCLUDE_DIRS})
 add_definitions(${EIGEN3_DEFINITIONS})
 
-add_executable(speed_controller src/speed_controller.cpp)
-ament_target_dependencies(speed_controller rclcpp std_msgs geometry_msgs Eigen3 sensor_msgs nav_msgs tf2 tf2_ros)
-
-add_executable(noisy_controller src/noisy_controller.cpp)
-ament_target_dependencies(noisy_controller rclcpp  geometry_msgs Eigen3 sensor_msgs nav_msgs tf2 tf2_ros)
-
-add_executable(imu_republisher src/imu_republisher.cpp)
-ament_target_dependencies(imu_republisher rclcpp std_msgs sensor_msgs nav_msgs)
+add_executable(Hardware_Interface
+  src/Hardware_Interface.cpp)
 
 
+target_include_directories(Hardware_Interface PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 
-install(TARGETS
-  speed_controller
-  noisy_controller
-  imu_republisher
-  DESTINATION lib/${PROJECT_NAME}
-)
+ament_target_dependencies(Hardware_Interface
+  rclcpp
+  std_msgs
+  sensor_msgs)
 
-install(
-  DIRECTORY include
-  DESTINATION include
-)
+install(TARGETS Hardware_Interface
+  DESTINATION lib/${PROJECT_NAME})
 
 install(
   DIRECTORY config launch
   DESTINATION share/${PROJECT_NAME}
 )
+
+install(DIRECTORY include/
+  DESTINATION include)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
