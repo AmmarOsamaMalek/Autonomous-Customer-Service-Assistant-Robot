@@ -20,13 +20,14 @@ class EnhancedHandDetector(Node):
         # Initialize CV Bridge
         self.bridge = CvBridge()
         
-        # Initialize MediaPipe Hands
+        # Initialize MediaPipe Hands with optimized settings for Raspberry Pi
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands(
             static_image_mode=False,
-            max_num_hands=2,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5
+            max_num_hands=1,  
+            min_detection_confidence=0.6,
+            min_tracking_confidence=0.5,
+            model_complexity=0  
         )
         
         # Initialize TF2 buffer
@@ -35,14 +36,24 @@ class EnhancedHandDetector(Node):
         
         # Camera intrinsic parameters (update these based on your camera)
         self.camera_matrix = np.array([
-            [525.0, 0, 319.5],
-            [0, 525.0, 239.5],
+            [460.0, 0, 320.0],  # fx, 0, cx
+            [0, 460.0, 240.0],  # 0, fy, cy
             [0, 0, 1]
         ])
         
         # Subscribers
-        self.create_subscription(Image, '/image_raw', self.image_callback, 10)
-        self.create_subscription(LaserScan, '/scan', self.lidar_callback, 10)
+        self.create_subscription(
+            Image,
+            '/image_raw',  # Updated topic for RPi camera
+            self.image_callback,
+            10
+        )
+        self.create_subscription(
+            LaserScan,
+            '/scan',
+            self.lidar_callback,
+            10
+        )
         
         # Publishers
         self.hand_raised_pub = self.create_publisher(Bool, '/hand_raised', 10)
@@ -186,20 +197,9 @@ class EnhancedHandDetector(Node):
                     px = int(wrist.x * w)
                     py = int(wrist.y * h)
                     return True, (px, py)
-                    
-                self.draw_landmarks(image, hand_landmarks)
         
         return False, None
 
-    def draw_landmarks(self, image, hand_landmarks):
-        mp_drawing = mp.solutions.drawing_utils
-        mp_drawing.draw_landmarks(
-            image,
-            hand_landmarks,
-            self.mp_hands.HAND_CONNECTIONS
-        )
-        cv2.imshow('Hand Detection', image)
-        cv2.waitKey(1)
 
 def main(args=None):
     rclpy.init(args=args)

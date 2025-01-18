@@ -1,192 +1,238 @@
-#include "robot_control/Hardware_Interface.hpp"
+#include "hardware_interface/system_interface.hpp"
+#include "hardware_interface/handle.hpp"
+#include "hardware_interface/hardware_info.hpp"
+#include "hardware_interface/types/hardware_interface_return_values.hpp"
+#include "hardware_interface/types/hardware_interface_type_values.hpp"  // Include this header
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp/macros.hpp"
+
+#include <fcntl.h>
+#include <termios.h>
 #include <unistd.h>
-#include <algorithm>
-#include <iomanip>
-#include <sstream>
+#include <errno.h>
+
+#include <vector>
+#include <string>
 #include <cstring>
+#include <chrono>
+#include <thread>
 
-// Constants matching AVR implementation
-const uint8_t START_BYTE = 0xFF;
-const uint8_t END_BYTE = 0xFE;
-const uint8_t PACKET_SIZE = 6;  // START + 4 motors + END
-const double MAX_VELOCITY = 10.0;  // Maximum velocity in rad/s
-
-WheelVelocityBridge::WheelVelocityBridge()
-: Node("wheel_velocity_bridge"),
-  serial_fd_(-1),
-  wheel_indices({
-    {"front_left_wheel", 0},
-    {"front_right_wheel", 1},
-    {"back_left_wheel", 2},
-    {"back_right_wheel", 3}
-  })
+namespace robot_control
 {
-    this->declare_parameter("serial_port", "/dev/ttyUSB0");
-    this->declare_parameter("baudrate", 115200);
-    
-    serial_port_ = this->get_parameter("serial_port").as_string();
-    baudrate_ = this->get_parameter("baudrate").as_int();
 
-    RCLCPP_INFO(this->get_logger(), "Initializing wheel velocity bridge...");
-    RCLCPP_INFO(this->get_logger(), "Serial port: %s", serial_port_.c_str());
-    RCLCPP_INFO(this->get_logger(), "Baudrate: %d", baudrate_);
-
-    if (!initialize_serial()) {
-        RCLCPP_ERROR(this->get_logger(), "Failed to initialize serial port");
-        return;
-    }
-
-    subscription_ = this->create_subscription<sensor_msgs::msg::JointState>(
-        "/joint_states", 10,
-        std::bind(&WheelVelocityBridge::joint_state_callback, this, std::placeholders::_1));
-
-    RCLCPP_INFO(this->get_logger(), "Successfully subscribed to /joint_states");
-    RCLCPP_INFO(this->get_logger(), "Wheel Velocity Bridge Node is ready!");
-}
-
-WheelVelocityBridge::~WheelVelocityBridge() {
-    if (serial_fd_ >= 0) {
-        // Send stop command before closing
-        std::vector<uint8_t> stop_packet(PACKET_SIZE, 128);
-        stop_packet[0] = START_BYTE;
-        stop_packet[PACKET_SIZE-1] = END_BYTE;
-        send_packet(stop_packet);
-        
-        RCLCPP_INFO(this->get_logger(), "Closing serial port");
-        close(serial_fd_);
-    }
-}
-
-bool WheelVelocityBridge::initialize_serial() {
-    RCLCPP_INFO(this->get_logger(), "Opening serial port...");
-    
-    serial_fd_ = open(serial_port_.c_str(), O_RDWR | O_NOCTTY);
-    if (serial_fd_ < 0) {
-        RCLCPP_ERROR(this->get_logger(), "Failed to open serial port: %s", strerror(errno));
-        return false;
-    }
-
-    struct termios tty;
-    if (tcgetattr(serial_fd_, &tty) != 0) {
-        RCLCPP_ERROR(this->get_logger(), "Failed to get serial attributes: %s", strerror(errno));
-        return false;
-    }
-
-    // Set baudrate
-    speed_t baud;
-    switch (baudrate_) {
-        case 9600: baud = B9600; break;
-        case 115200: baud = B115200; break;
-        default:
-            RCLCPP_ERROR(this->get_logger(), "Unsupported baudrate: %d", baudrate_);
-            return false;
-    }
-
-    cfsetospeed(&tty, baud);
-    cfsetispeed(&tty, baud);
-
-    // Match AVR UART settings
-    tty.c_cflag |= (CLOCAL | CREAD);    // Enable receiver and set local mode
-    tty.c_cflag &= ~PARENB;             // No parity
-    tty.c_cflag &= ~CSTOPB;             // 1 stop bit
-    tty.c_cflag &= ~CSIZE;
-    tty.c_cflag |= CS8;                 // 8 data bits
-    tty.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG); // Raw mode
-    tty.c_oflag &= ~OPOST;              // Raw output
-    tty.c_cc[VMIN] = 0;                 // Non-blocking read
-    tty.c_cc[VTIME] = 1;                // 0.1 second read timeout
-
-    if (tcsetattr(serial_fd_, TCSANOW, &tty) != 0) {
-        RCLCPP_ERROR(this->get_logger(), "Failed to set serial attributes: %s", strerror(errno));
-        return false;
-    }
-
-    // Flush any existing data
-    tcflush(serial_fd_, TCIOFLUSH);
-
-    RCLCPP_INFO(this->get_logger(), "Serial port successfully configured");
-    return true;
-}
-
-uint8_t WheelVelocityBridge::convert_velocity_to_command(double velocity) {
-    // Convert rad/s to motor command (0-255)
-    // 128 is stop
-    // 129-255 is forward (increasing speed)
-    // 0-127 is reverse (decreasing speed)
-    double normalized_vel = std::clamp(velocity / MAX_VELOCITY, -1.0, 1.0);
-    
-    uint8_t command;
-    if (normalized_vel >= 0) {
-        command = static_cast<uint8_t>(128 + (normalized_vel * 127));
-    } else {
-        command = static_cast<uint8_t>(128 - (std::abs(normalized_vel) * 127));
-    }
-
-    RCLCPP_DEBUG(this->get_logger(), 
-                 "Velocity: %.3f rad/s, Normalized: %.3f, Command: %d", 
-                 velocity, normalized_vel, command);
-    return command;
-}
-
-bool WheelVelocityBridge::send_packet(const std::vector<uint8_t>& packet) {
-    if (packet.size() != PACKET_SIZE) {
-        RCLCPP_ERROR(this->get_logger(), "Invalid packet size: %zu (expected %d)", 
-                     packet.size(), PACKET_SIZE);
-        return false;
-    }
-
-    std::stringstream hex_stream;
-    hex_stream << std::hex << std::setfill('0');
-    for (uint8_t byte : packet) {
-        hex_stream << "0x" << std::setw(2) << static_cast<int>(byte) << " ";
-    }
-    
-    RCLCPP_DEBUG(this->get_logger(), "Sending packet: %s", hex_stream.str().c_str());
-
-    ssize_t bytes_written = write(serial_fd_, packet.data(), packet.size());
-    if (bytes_written != static_cast<ssize_t>(packet.size())) {
-        RCLCPP_ERROR(this->get_logger(), "Failed to write complete packet: %s", strerror(errno));
-        return false;
-    }
-    
-    // Small delay to ensure packet is sent completely
-    usleep(1000);  // 1ms delay
-    
-    RCLCPP_DEBUG(this->get_logger(), "Successfully wrote %zd bytes", bytes_written);
-    return true;
-}
-
-void WheelVelocityBridge::joint_state_callback(
-    const sensor_msgs::msg::JointState::SharedPtr msg)
+class SimpleHardwareInterface : public hardware_interface::SystemInterface
 {
-    // Create packet structure: [START_BYTE, M1, M2, M3, M4, END_BYTE]
-    std::vector<uint8_t> packet(PACKET_SIZE, 128);  // Initialize with stop commands
-    packet[0] = START_BYTE;
-    packet[PACKET_SIZE-1] = END_BYTE;
-    
-    // Extract velocities based on joint names
-    for (size_t i = 0; i < msg->name.size(); ++i) {
-        auto it = wheel_indices.find(msg->name[i]);
-        if (it != wheel_indices.end() && i < msg->velocity.size()) {
-            packet[it->second + 1] = convert_velocity_to_command(msg->velocity[i]);
+public:
+    RCLCPP_SHARED_PTR_DEFINITIONS(SimpleHardwareInterface)
+
+    hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override
+    {
+        if (SystemInterface::on_init(info) != CallbackReturn::SUCCESS) {
+            return CallbackReturn::ERROR;
         }
+
+        // Check parameters
+        if (info_.hardware_parameters.count("serial_port") == 0 || 
+            info_.hardware_parameters.count("baud_rate") == 0) {
+            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Missing required parameters 'serial_port' or 'baud_rate'");
+            return CallbackReturn::ERROR;
+        }
+
+        // Get parameters
+        port_ = info_.hardware_parameters["serial_port"];
+        baud_rate_ = std::stoi(info_.hardware_parameters["baud_rate"]);
+
+        // Initialize the storage vectors with the correct size
+        hw_positions_.resize(info_.joints.size(), 0.0);
+        hw_velocities_.resize(info_.joints.size(), 0.0);
+        hw_commands_.resize(info_.joints.size(), 0.0);
+
+        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
+                    "Initialized with port: %s, baud: %d", 
+                    port_.c_str(), baud_rate_);
+        
+        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
+                    "Configured for %zu joints", info_.joints.size());
+
+        return CallbackReturn::SUCCESS;
     }
 
-    // Log motor commands
-    RCLCPP_INFO(this->get_logger(), 
-                "Motor commands - FL: %d, FR: %d, BL: %d, BR: %d",
-                packet[1], packet[2], packet[3], packet[4]);
+    std::vector<hardware_interface::StateInterface> export_state_interfaces() override
+    {
+        std::vector<hardware_interface::StateInterface> state_interfaces;
+        
+        // Get joint names from hardware info
+        for (const hardware_interface::ComponentInfo& joint : info_.joints) {
+            // Export position interface
+            state_interfaces.emplace_back(
+                hardware_interface::StateInterface(
+                    joint.name, 
+                    hardware_interface::HW_IF_POSITION,  // Use the constant
+                    &hw_positions_[state_interfaces.size() / 2]));
+                    
+            // Export velocity interface
+            state_interfaces.emplace_back(
+                hardware_interface::StateInterface(
+                    joint.name, 
+                    hardware_interface::HW_IF_VELOCITY,  // Use the constant
+                    &hw_velocities_[state_interfaces.size() / 2]));
+                    
+            RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Exported state interfaces for joint: %s", joint.name.c_str());
+        }
+
+        return state_interfaces;
+    }
+
+    std::vector<hardware_interface::CommandInterface> export_command_interfaces() override
+    {
+        std::vector<hardware_interface::CommandInterface> command_interfaces;
+        
+        // Get joint names from hardware info
+        for (const hardware_interface::ComponentInfo& joint : info_.joints) {
+            command_interfaces.emplace_back(
+                hardware_interface::CommandInterface(
+                    joint.name, 
+                    hardware_interface::HW_IF_VELOCITY,  // Use the constant
+                    &hw_commands_[command_interfaces.size()]));
+                    
+            RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Exported command interface for joint: %s", joint.name.c_str());
+        }
+
+        return command_interfaces;
+    }
+
+    hardware_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override
+    {
+        // Open serial port
+        serial_fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
+        if (serial_fd_ < 0) {
+            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Failed to open serial port: %s", strerror(errno));
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+
+        // Configure serial port
+        struct termios tty;
+        memset(&tty, 0, sizeof(tty));
+        if (tcgetattr(serial_fd_, &tty) != 0) {
+            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Failed to get serial attributes");
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+
+        // Set baud rate
+        cfsetospeed(&tty, B9600);
+        cfsetispeed(&tty, B9600);
+
+        // 8N1 mode
+        tty.c_cflag &= ~PARENB;
+        tty.c_cflag &= ~CSTOPB;
+        tty.c_cflag &= ~CSIZE;
+        tty.c_cflag |= CS8;
+        
+        // No flow control
+        tty.c_cflag &= ~CRTSCTS;
+        
+        // Turn on READ & ignore control lines
+        tty.c_cflag |= CREAD | CLOCAL;
+        
+        // Raw mode
+        tty.c_lflag &= ~ICANON;
+        tty.c_lflag &= ~ECHO;
+        tty.c_lflag &= ~ECHOE;
+        tty.c_lflag &= ~ECHONL;
+        tty.c_lflag &= ~ISIG;
+        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
+        tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL);
+        tty.c_oflag &= ~OPOST;
+        tty.c_oflag &= ~ONLCR;
+        
+        // Wait for 1 byte for up to 0.1 seconds
+        tty.c_cc[VMIN] = 1;
+        tty.c_cc[VTIME] = 1;
+
+        if (tcsetattr(serial_fd_, TCSANOW, &tty) != 0) {
+            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Failed to set serial attributes");
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+
+        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Successfully activated");
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+
+    hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override
+    {
+        if (serial_fd_ >= 0) {
+            close(serial_fd_);
+            serial_fd_ = -1;
+        }
+        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Successfully deactivated");
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+
+    hardware_interface::return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override
+    {
+        // Update position based on velocity for basic odometry
+        double dt = period.seconds();
+
+        for (size_t i = 0; i < hw_positions_.size(); ++i) {
+            hw_positions_[i] += hw_velocities_[i] * dt;
+        }
+
+        return hardware_interface::return_type::OK;
+    }
+
+    hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override
+    {
+        if (serial_fd_ < 0) {
+            return hardware_interface::return_type::ERROR;
+        }
+
+        // Format for AVR: START_BYTE + 4 PWM values + END_BYTE
+        uint8_t packet[6] = {0xFF, 0, 0, 0, 0, 0xFE};
+        
+        // Convert wheel velocities to PWM values (0-255)
+        for (size_t i = 0; i < 4; ++i) {
+            // Scale velocity to PWM range and add direction bit
+            double scaled_vel = hw_commands_[i] * 127.0 / 0.5; // max velocity from URDF
+            if (scaled_vel > 0) {
+                packet[i + 1] = static_cast<uint8_t>(std::min(127.0, scaled_vel)) + 128;
+            } else {
+                packet[i + 1] = static_cast<uint8_t>(std::min(127.0, -scaled_vel));
+            }
+            // Update stored velocity for position estimation
+            hw_velocities_[i] = hw_commands_[i];
+        }
+
+        // Send to AVR
+        ssize_t bytes_written = ::write(serial_fd_, packet, 6);  // Using global scope operator
+        if (bytes_written != 6) {
+            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
+                        "Failed to write complete packet: %s", strerror(errno));
+            return hardware_interface::return_type::ERROR;
+        }
+
+        return hardware_interface::return_type::OK;
+    }
+
+private:
+    std::vector<double> hw_commands_;
+    std::vector<double> hw_positions_;
+    std::vector<double> hw_velocities_;
     
-    // Send packet
-    if (!send_packet(packet)) {
-        RCLCPP_WARN(this->get_logger(), "Failed to send packet");
-    }
-}
+    std::string port_;
+    int serial_fd_ = -1;
+    int baud_rate_;
+};
 
-int main(int argc, char* argv[]) {
-    rclcpp::init(argc, argv);
-    auto node = std::make_shared<WheelVelocityBridge>();
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}
+} // namespace robot_control
+
+#include "pluginlib/class_list_macros.hpp"
+PLUGINLIB_EXPORT_CLASS(
+    robot_control::SimpleHardwareInterface,
+    hardware_interface::SystemInterface)
+

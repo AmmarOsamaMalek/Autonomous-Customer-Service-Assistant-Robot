@@ -1,47 +1,56 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100  # Hz
+    update_rate: 50  # Hz
 
-    # Broadcast robot's state
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    # Advanced Differential Drive Controller
     diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
+    ServiceRobotSystem:
+      type: robot_control/SimpleHardwareInterface
+      hardware_parameters:
+        serial_port: "/dev/ttyUSB0"
+        baud_rate: 9600
+
 diff_drive_controller:
   ros__parameters:
-    publish_wheel_joint_controller_state: true
-    odom_frame_id: "odom"
-    base_frame_id: "base_link"
-    map_frame_id: "map"
-    publish_odom: true
-    use_map: true
-    map_topic: "/map"
-    use_stamped_vel: false
-    
-    left_wheel_names: ["wheel_back_left_joint", "wheel_front_left_joint"]
-    right_wheel_names: ["wheel_back_right_joint", "wheel_front_right_joint"]
-    wheel_separation: 0.4  
-    wheel_radius: 0.07     
     publish_rate: 50.0
-    command_interface: "velocity"
-    state_interfaces: ["velocity", "position"]
+    base_frame_id: base_link
+    odom_frame_id: odom
 
+    # Wheel configuration
+    left_wheel_names: ["wheel_front_left_joint", "wheel_back_left_joint"]
+    right_wheel_names: ["wheel_front_right_joint", "wheel_back_right_joint"]
+    wheel_separation: 0.4  # Distance between left and right wheels
+    wheel_radius: 0.07    # Matches URDF
 
-    # Velocity limits
+    # Odometry configuration
+    publish_wheel_joint_controller_state: true
+    publish_odom: true
+    enable_odom_tf: true  # Publish odom->base_link transform
+    
+    # Command interfaces
+    use_stamped_vel: false  # Use geometry_msgs/Twist instead of TwistStamped
+    
+    # Velocity limits (matching AVR capabilities)
     linear:
       x:
-        max_velocity: 2.0  # m/s
-        min_velocity: -2.0 # m/s
-        max_acceleration: 2.0
-        min_acceleration: -2.0
-
+        max_velocity: 0.5
+        min_velocity: -0.5
+        max_acceleration: 1.0
+        min_acceleration: -1.0
     angular:
       z:
-        max_velocity: 2.0  # rad/s
-        min_velocity: -2.0 # rad/s
-        max_acceleration: 2.0
-        min_acceleration: -2.0
-
+        max_velocity: 1.0
+        min_velocity: -1.0
+        max_acceleration: 1.0
+        min_acceleration: -1.0
+    
+    # PID gains for velocity control
+    pid_gains:
+      wheel_front_left_joint: {p: 0.5, i: 0.1, d: 0.0}
+      wheel_front_right_joint: {p: 0.5, i: 0.1, d: 0.0}
+      wheel_back_left_joint: {p: 0.5, i: 0.1, d: 0.0}
+      wheel_back_right_joint: {p: 0.5, i: 0.1, d: 0.0}
