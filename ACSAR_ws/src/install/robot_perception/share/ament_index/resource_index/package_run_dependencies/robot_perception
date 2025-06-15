@@ -1,0 +1,1 @@
+rclcpp;rclpy;sensor_msgs;geometry_msgs;std_msgs;cv_bridge;python3-opencv;python3-numpy;python3-torch;python3-mediapipe;ament_lint_auto;ament_lint_common

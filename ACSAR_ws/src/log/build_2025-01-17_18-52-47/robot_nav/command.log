@@ -1,0 +1,1 @@
+Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_nav -DCMAKE_INSTALL_PREFIX=/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav

@@ -12,10 +12,13 @@ find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)  # Added nav_msgs dependency
 find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(tf2_ros REQUIRED)  # Added tf2_ros dependency
+pkg_check_modules(SERIAL libserial REQUIRED)
 
 
 # Find Eigen3
@@ -36,15 +39,19 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(${PROJECT_NAME}
   ${SERIAL_LIBRARIES}
+  tf2_ros::tf2_ros
 )
+
 
 ament_target_dependencies(${PROJECT_NAME}
   rclcpp
   std_msgs
   sensor_msgs
+  nav_msgs
   hardware_interface
   pluginlib
   rclcpp_lifecycle
+  tf2_ros
 )
 
 # Export plugins
@@ -86,6 +93,8 @@ ament_export_dependencies(
   pluginlib
   rclcpp
   rclcpp_lifecycle
+  tf2_ros  # Added tf2_ros to exported dependencies
+  nav_msgs  # Added nav_msgs to exported dependencies
 )
 
 ament_package()

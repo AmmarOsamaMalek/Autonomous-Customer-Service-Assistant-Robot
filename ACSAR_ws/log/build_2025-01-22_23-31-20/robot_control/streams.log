@@ -1,0 +1,74 @@
+[0.028s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[0.089s] [35m[1mConsolidate compiler generated dependencies of target robot_control[0m
+[0.110s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o[0m
+[2.465s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_activate(const rclcpp_lifecycle::State&)[m[K’:
+[2.465s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:122:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.465s]   122 |  on_activate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+[2.465s]       |              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[2.465s] 
+[2.466s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_deactivate(const rclcpp_lifecycle::State&)[m[K’:
+[2.466s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:182:86:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.466s]   182 | n_deactivate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+[2.466s]       |              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[2.466s] 
+[2.469s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[2.469s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:192:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.469s]   192 | rface::return_type read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+[2.469s]       |                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[2.469s] 
+[2.469s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:192:94:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.469s]   192 | clcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K) override
+[2.469s]       |                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[2.469s] 
+[2.470s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[2.470s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:266:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.470s]   266 | face::return_type write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+[2.470s]       |                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[2.470s] 
+[2.470s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:266:95:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.470s]   266 | clcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K) override
+[2.470s]       |                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[2.470s] 
+[3.574s] [100%] [32m[1mLinking CXX shared library librobot_control.so[0m
+[3.778s] [100%] Built target robot_control
+[3.786s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[3.788s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control
+[3.794s] -- Install configuration: ""
+[3.794s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/src/lifecycle_hardware_interface.xml
+[3.795s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/librobot_control.so
+[3.796s] -- Set runtime path of "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/librobot_control.so" to ""
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/speed_controller.hpp
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/Hardware_Interface.hpp
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/noisy_controller.hpp
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config
+[3.796s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/diff_controller_sim.yaml
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/robot_controllers.yaml
+[3.796s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/diff_controller.yaml
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch
+[3.797s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/diff_controller_sim.launch.py
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/controller.launch.py
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/diff_controller.launch.py
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/library_path.sh
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/library_path.dsv
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.sh
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.dsv
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.bash
+[3.797s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.sh
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.zsh
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.dsv
+[3.798s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.dsv
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/robot_control
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_libraries-extras.cmake
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+[3.798s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.xml
+[3.799s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control

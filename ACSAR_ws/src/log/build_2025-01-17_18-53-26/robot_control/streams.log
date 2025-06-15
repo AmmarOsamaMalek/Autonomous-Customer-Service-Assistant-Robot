@@ -1,0 +1,38 @@
+[0.026s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_control
+[0.041s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.157s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.184s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.186s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.192s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.201s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.213s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.243s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.245s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.342s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.389s] -- Found rclpy: 3.3.15 (/opt/ros/humble/share/rclpy/cmake)
+[0.389s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.416s] -- Found hardware_interface: 2.46.0 (/opt/ros/humble/share/hardware_interface/cmake)
+[0.523s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.595s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.595s] -- Configured cppcheck include dirs: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include;$<BUILD_INTERFACE:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include>
+[0.595s] -- Configured cppcheck exclude dirs and/or files: 
+[0.596s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.597s] -- Added test 'lint_cmake' to check CMake code style
+[0.597s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.598s] -- Added test 'uncrustify' to check C / C++ code style
+[0.598s] -- Configured uncrustify additional arguments: 
+[0.599s] -- Added test 'xmllint' to check XML markup files
+[0.601s] -- Configuring done
+[0.620s] -- Generating done
+[0.624s] -- Build files have been written to: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control
+[0.632s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control -DCMAKE_INSTALL_PREFIX=/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_control
+[0.633s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control -- -j12 -l12
+[0.672s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o[0m
+[0.883s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:13:10:[m[K [01;31m[Kfatal error: [m[Kserial/serial.h: No such file or directory
+[0.883s]    13 | #include [01;31m[K<serial/serial.h>[m[K
+[0.883s]       |          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[0.883s] compilation terminated.
+[0.886s] gmake[2]: *** [CMakeFiles/robot_control.dir/build.make:76: CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o] Error 1
+[0.886s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/robot_control.dir/all] Error 2
+[0.886s] gmake: *** [Makefile:146: all] Error 2
+[0.888s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/build/robot_control -- -j12 -l12

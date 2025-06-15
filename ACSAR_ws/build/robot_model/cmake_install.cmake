@@ -46,8 +46,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_model" TYPE DIRECTORY FILES
     "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/urdf"
     "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/launch"
-    "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/rviz"
-    "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/models"
     )
 endif()
 

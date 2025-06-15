@@ -1,0 +1,17 @@
+[0.027s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[0.078s] [ 25%] [32m[1mLinking CXX executable Hardware_Interface[0m
+[0.078s] [ 50%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o[0m
+[0.086s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Khardware_interface/system_interface.hpp: No such file or directory
+[0.086s]     1 | #include [01;31m[K"hardware_interface/system_interface.hpp"[m[K
+[0.087s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.087s] compilation terminated.
+[0.217s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[0.217s] (.text+0x1b): undefined reference to `main'
+[0.218s] gmake[2]: *** [CMakeFiles/robot_control.dir/build.make:76: CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o] Error 1
+[0.218s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/robot_control.dir/all] Error 2
+[0.218s] gmake[1]: *** Waiting for unfinished jobs....
+[0.229s] collect2: error: ld returned 1 exit status
+[0.231s] gmake[2]: *** [CMakeFiles/Hardware_Interface.dir/build.make:290: Hardware_Interface] Error 1
+[0.231s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/Hardware_Interface.dir/all] Error 2
+[0.231s] gmake: *** [Makefile:146: all] Error 2
+[0.528s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12

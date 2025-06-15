@@ -1,0 +1,308 @@
+[0.000000] (-) TimerEvent: {}
+[0.000826] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000998] (-) JobUnselected: {'identifier': 'robot_model'}
+[0.001121] (-) JobUnselected: {'identifier': 'robot_nav'}
+[0.001145] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.001175] (-) JobUnselected: {'identifier': 'rplidar_ros'}
+[0.001196] (-) JobUnselected: {'identifier': 'service_robot_localization'}
+[0.001218] (iot_interface) JobQueued: {'identifier': 'iot_interface', 'dependencies': OrderedDict()}
+[0.001241] (iot_interface) JobStarted: {'identifier': 'iot_interface'}
+[0.009405] (iot_interface) JobProgress: {'identifier': 'iot_interface', 'progress': 'cmake'}
+[0.009969] (iot_interface) JobProgress: {'identifier': 'iot_interface', 'progress': 'build'}
+[0.010656] (iot_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface', '--', '-j12', '-l12'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar/paho.mqtt.cpp'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1982'), ('SYSTEMD_EXEC_PID', '2148'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4977'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:12073'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/2123,unix/ammar-G5-5500:/tmp/.ICE-unix/2123'), ('INVOCATION_ID', '07789c89a36a426cb6088a7338e3ffe8'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.G2HO52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:cfa20163-fcae-4f56-8828-8ad8fbe143f9'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface:/opt/ros/humble')]), 'shell': False}
+[0.058128] (iot_interface) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target mqtt_interface\x1b[0m\n'}
+[0.080559] (iot_interface) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o\x1b[0m\n'}
+[0.099727] (-) TimerEvent: {}
+[0.200027] (-) TimerEvent: {}
+[0.300357] (-) TimerEvent: {}
+[0.400598] (-) TimerEvent: {}
+[0.500849] (-) TimerEvent: {}
+[0.601204] (-) TimerEvent: {}
+[0.701449] (-) TimerEvent: {}
+[0.801693] (-) TimerEvent: {}
+[0.901971] (-) TimerEvent: {}
+[1.002238] (-) TimerEvent: {}
+[1.102508] (-) TimerEvent: {}
+[1.202779] (-) TimerEvent: {}
+[1.303066] (-) TimerEvent: {}
+[1.403340] (-) TimerEvent: {}
+[1.503609] (-) TimerEvent: {}
+[1.603882] (-) TimerEvent: {}
+[1.704170] (-) TimerEvent: {}
+[1.804451] (-) TimerEvent: {}
+[1.904726] (-) TimerEvent: {}
+[2.005000] (-) TimerEvent: {}
+[2.105288] (-) TimerEvent: {}
+[2.205572] (-) TimerEvent: {}
+[2.305847] (-) TimerEvent: {}
+[2.406115] (-) TimerEvent: {}
+[2.506390] (-) TimerEvent: {}
+[2.606666] (-) TimerEvent: {}
+[2.706944] (-) TimerEvent: {}
+[2.781667] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:41:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[2.781844] (iot_interface) StderrLine: {'line': b'   41 | void \x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K::mqtt_publish(const std::string& topic, const std::string& payload) {\n'}
+[2.781915] (iot_interface) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.786165] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid mqtt_publish(const string&, const string&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.786270] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:49:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmqtt_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KMQTTClient\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.786340] (iot_interface) StderrLine: {'line': b'   49 |     MQTTClient_publishMessage(\x1b[01;31m\x1b[Kmqtt_client_\x1b[m\x1b[K, topic.c_str(), &pubmsg, &token);\n'}
+[2.786401] (iot_interface) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.786459] (iot_interface) StderrLine: {'line': b'      |                               \x1b[32m\x1b[KMQTTClient\x1b[m\x1b[K\n'}
+[2.786516] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.786574] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:53:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[2.786633] (iot_interface) StderrLine: {'line': b'   53 |   void \x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg) {\n'}
+[2.786691] (iot_interface) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.790685] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid odom_callback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.790794] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:54:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kx_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.790862] (iot_interface) StderrLine: {'line': b'   54 |     \x1b[01;31m\x1b[Kx_\x1b[m\x1b[K = msg->pose.pose.position.x;\n'}
+[2.790923] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.792985] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:55:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ky_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kyn\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.793089] (iot_interface) StderrLine: {'line': b'   55 |     \x1b[01;31m\x1b[Ky_\x1b[m\x1b[K = msg->pose.pose.position.y;\n'}
+[2.793160] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.793227] (iot_interface) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kyn\x1b[m\x1b[K\n'}
+[2.795773] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:56:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktheta_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.795883] (iot_interface) StderrLine: {'line': b'   56 |     \x1b[01;31m\x1b[Ktheta_\x1b[m\x1b[K = msg->pose.pose.orientation.z;\n'}
+[2.795949] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.804024] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:58:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcould not convert \xe2\x80\x98\x1b[01m\x1b[K{{"x", x_}, {"y", y_}, {"theta", theta_}}\x1b[m\x1b[K\xe2\x80\x99 from \xe2\x80\x98\x1b[01m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kjson\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Knlohmann::json_abi_v3_11_3::basic_json<>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[2.804133] (iot_interface) StderrLine: {'line': b'   58 |     json position = {{"x", x_}, {"y", y_}, {"theta", theta_}\x1b[01;31m\x1b[K}\x1b[m\x1b[K;\n'}
+[2.804215] (iot_interface) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.804280] (iot_interface) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.804339] (iot_interface) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\n'}
+[2.804565] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.804667] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.804734] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.804793] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.804850] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.804906] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.804968] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.805024] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.805086] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.805140] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.805208] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.805266] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.805321] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.805377] (iot_interface) StderrLine: {'line': b'   60 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.805438] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.805492] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.805546] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.805601] (iot_interface) StderrLine: {'line': b'   60 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.805655] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.805709] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.805763] (iot_interface) StderrLine: {'line': b'   60 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.805818] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.805872] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.805925] (iot_interface) StderrLine: {'line': b'   60 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.805979] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.806033] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.806089] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.806143] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.806206] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.806263] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.806317] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.806371] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.806425] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.806478] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.806532] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.806586] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.806645] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.806701] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.806761] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.806816] (iot_interface) StderrLine: {'line': b'   60 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.806871] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.806925] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.806978] (-) TimerEvent: {}
+[2.807057] (iot_interface) StderrLine: {'line': b'   60 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published position: %s", position.dump().c_str());\n'}
+[2.807129] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.807195] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.807259] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[2.807315] (iot_interface) StderrLine: {'line': b'   63 |   void \x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K::customer_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg) {\n'}
+[2.807370] (iot_interface) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.812322] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid customer_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.812422] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:64:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcustomer_detected_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.812487] (iot_interface) StderrLine: {'line': b'   64 |     \x1b[01;31m\x1b[Kcustomer_detected_\x1b[m\x1b[K = true;\n'}
+[2.812545] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.816028] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:65:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdelivered_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.816127] (iot_interface) StderrLine: {'line': b'   65 |     \x1b[01;31m\x1b[Kdelivered_\x1b[m\x1b[K = true;\n'}
+[2.816201] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.816260] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.816320] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.816377] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.816431] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.816624] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.816689] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.816747] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.816803] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.816858] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.816911] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.816968] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.817022] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.817075] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.817130] (iot_interface) StderrLine: {'line': b'   66 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.817203] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.817260] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.817315] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.817368] (iot_interface) StderrLine: {'line': b'   66 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.817423] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.817476] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.817530] (iot_interface) StderrLine: {'line': b'   66 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.817583] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.817635] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.817689] (iot_interface) StderrLine: {'line': b'   66 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.817748] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.817802] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.817866] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.817920] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.817974] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.818027] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.818080] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.818133] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.818196] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.818252] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.818305] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.818357] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.818409] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.818462] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.818514] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.818566] (iot_interface) StderrLine: {'line': b'   66 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.818619] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.818671] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.818727] (iot_interface) StderrLine: {'line': b'   66 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Customer detected, marking order as delivered");\n'}
+[2.818780] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.818833] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:87:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.818889] (iot_interface) StderrLine: {'line': b'   63 |   void MQTTBridge::customer_callback(\x1b[01;35m\x1b[Kconst geometry_msgs::msg::PoseStamped::SharedPtr msg\x1b[m\x1b[K) {\n'}
+[2.818943] (iot_interface) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.819003] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.819063] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:69:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[2.819117] (iot_interface) StderrLine: {'line': b'   69 |   void \x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K::timer_callback() {\n'}
+[2.819177] (iot_interface) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.821643] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid timer_callback()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.821739] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:70:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcustomer_detected_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.821804] (iot_interface) StderrLine: {'line': b'   70 |     if (!\x1b[01;31m\x1b[Kcustomer_detected_\x1b[m\x1b[K) {\n'}
+[2.821862] (iot_interface) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.825185] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:71:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdelivered_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.825282] (iot_interface) StderrLine: {'line': b'   71 |       \x1b[01;31m\x1b[Kdelivered_\x1b[m\x1b[K = false;\n'}
+[2.825344] (iot_interface) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.828296] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Korder_id_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.828393] (iot_interface) StderrLine: {'line': b'   73 |     json status = {{"order_id", \x1b[01;31m\x1b[Korder_id_\x1b[m\x1b[K}, {"delivered", delivered_}};\n'}
+[2.828464] (iot_interface) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.831807] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdelivered_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.831914] (iot_interface) StderrLine: {'line': b'   73 |     json status = {{"order_id", order_id_}, {"delivered", \x1b[01;31m\x1b[Kdelivered_\x1b[m\x1b[K}};\n'}
+[2.831978] (iot_interface) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.836591] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcould not convert \xe2\x80\x98\x1b[01m\x1b[K{{"order_id", <expression error>}, {"delivered", <expression error>}}\x1b[m\x1b[K\xe2\x80\x99 from \xe2\x80\x98\x1b[01m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kjson\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Knlohmann::json_abi_v3_11_3::basic_json<>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[2.836879] (iot_interface) StderrLine: {'line': b'   73 |     json status = {{"order_id", order_id_}, {"delivered", delivered_}\x1b[01;31m\x1b[K}\x1b[m\x1b[K;\n'}
+[2.836955] (iot_interface) StderrLine: {'line': b'      |                                                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.837026] (iot_interface) StderrLine: {'line': b'      |                                                                      \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.837093] (iot_interface) StderrLine: {'line': b'      |                                                                      \x1b[01;31m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\n'}
+[2.837161] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.837373] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.837438] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.837495] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.837550] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.837603] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.837657] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.837709] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.837762] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.837814] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.837866] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.837925] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.837978] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.838032] (iot_interface) StderrLine: {'line': b'   75 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.838085] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.838137] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.838201] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.838257] (iot_interface) StderrLine: {'line': b'   75 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.838310] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.838363] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.838422] (iot_interface) StderrLine: {'line': b'   75 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.838476] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.838529] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.838581] (iot_interface) StderrLine: {'line': b'   75 |     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.838634] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.838685] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.838743] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.838795] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.838852] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.838904] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.838956] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.839008] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.839060] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.839112] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.839171] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.839229] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.839282] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.839337] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.839390] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.839444] (iot_interface) StderrLine: {'line': b'   75 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.839496] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.839549] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.839603] (iot_interface) StderrLine: {'line': b'   75 |     RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), "Published order status: %s", status.dump().c_str());\n'}
+[2.839671] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.843343] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:76:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcustomer_detected_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.843477] (iot_interface) StderrLine: {'line': b'   76 |     \x1b[01;31m\x1b[Kcustomer_detected_\x1b[m\x1b[K = false;\n'}
+[2.843542] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.847730] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.847907] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.847973] (iot_interface) StderrLine: {'line': b'   81 |     auto node = std::make_shared<\x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K>();\n'}
+[2.848031] (iot_interface) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.848085] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_shared<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.848140] (iot_interface) StderrLine: {'line': b'   81 |     auto node = \x1b[01;31m\x1b[Kstd::make_shared<MQTTBridge>()\x1b[m\x1b[K;\n'}
+[2.848205] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.848260] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[2.848312] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.848364] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.848417] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.848469] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:875:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.848523] (iot_interface) StderrLine: {'line': b'  875 |     \x1b[01;36m\x1b[Kmake_shared\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.848575] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.848630] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:875:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.848682] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.848743] (iot_interface) StderrLine: {'line': b'   81 |     auto node = \x1b[01;31m\x1b[Kstd::make_shared<MQTTBridge>()\x1b[m\x1b[K;\n'}
+[2.848802] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.907108] (-) TimerEvent: {}
+[3.007339] (-) TimerEvent: {}
+[3.107566] (-) TimerEvent: {}
+[3.207793] (-) TimerEvent: {}
+[3.308055] (-) TimerEvent: {}
+[3.408289] (-) TimerEvent: {}
+[3.508521] (-) TimerEvent: {}
+[3.608762] (-) TimerEvent: {}
+[3.709035] (-) TimerEvent: {}
+[3.809286] (-) TimerEvent: {}
+[3.909533] (-) TimerEvent: {}
+[4.009814] (-) TimerEvent: {}
+[4.110079] (-) TimerEvent: {}
+[4.210315] (-) TimerEvent: {}
+[4.310559] (-) TimerEvent: {}
+[4.410820] (-) TimerEvent: {}
+[4.511083] (-) TimerEvent: {}
+[4.611318] (-) TimerEvent: {}
+[4.711546] (-) TimerEvent: {}
+[4.811810] (-) TimerEvent: {}
+[4.912074] (-) TimerEvent: {}
+[5.012307] (-) TimerEvent: {}
+[5.112540] (-) TimerEvent: {}
+[5.212795] (-) TimerEvent: {}
+[5.313060] (-) TimerEvent: {}
+[5.413295] (-) TimerEvent: {}
+[5.513524] (-) TimerEvent: {}
+[5.613749] (-) TimerEvent: {}
+[5.714014] (-) TimerEvent: {}
+[5.814228] (-) TimerEvent: {}
+[5.914452] (-) TimerEvent: {}
+[6.014675] (-) TimerEvent: {}
+[6.114946] (-) TimerEvent: {}
+[6.215223] (-) TimerEvent: {}
+[6.315452] (-) TimerEvent: {}
+[6.415683] (-) TimerEvent: {}
+[6.515962] (-) TimerEvent: {}
+[6.616233] (-) TimerEvent: {}
+[6.716478] (-) TimerEvent: {}
+[6.816726] (-) TimerEvent: {}
+[6.917035] (-) TimerEvent: {}
+[7.017310] (-) TimerEvent: {}
+[7.117555] (-) TimerEvent: {}
+[7.194749] (iot_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/mqtt_interface.dir/build.make:76: CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o] Error 1\n'}
+[7.195022] (iot_interface) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mqtt_interface.dir/all] Error 2\n'}
+[7.195210] (iot_interface) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.197231] (iot_interface) CommandEnded: {'returncode': 2}
+[7.207129] (iot_interface) JobEnded: {'identifier': 'iot_interface', 'rc': 2}
+[7.217779] (-) EventReactorShutdown: {}

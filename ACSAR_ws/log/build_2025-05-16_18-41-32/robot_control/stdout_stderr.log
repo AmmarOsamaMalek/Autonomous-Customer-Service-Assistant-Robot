@@ -1,0 +1,76 @@
+[35m[1mConsolidate compiler generated dependencies of target robot_control[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o[0m
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn ACSAR_firmware::ACSARInterface::on_activate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:97:99:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   97 | terface::on_activate([01;35m[Kconst rclcpp_lifecycle::State &previous_state[m[K)
+      |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn ACSAR_firmware::ACSARInterface::on_deactivate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:150:101:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  150 | rface::on_deactivate([01;35m[Kconst rclcpp_lifecycle::State &previous_state[m[K)
+      |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type ACSAR_firmware::ACSARInterface::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:257:13:[m[K [01;35m[Kwarning: [m[Kexception of type ‘[01m[Kstd::exception[m[K’ will be caught by earlier handler [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wexceptions-Wexceptions]8;;[m[K]
+  257 |             [01;35m[Kcatch[m[K (const std::exception& e)
+      |             [01;35m[K^~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:253:13:[m[K [01;36m[Knote: [m[Kfor type ‘[01m[Kstd::exception[m[K’
+  253 |             [01;36m[Kcatch[m[K (const std::exception& e) {
+      |             [01;36m[K^~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:174:78:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  174 | eturn_type ACSARInterface::read([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &period)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:174:108:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  174 | :read(const rclcpp::Time &time, [01;35m[Kconst rclcpp::Duration &period[m[K)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type ACSAR_firmware::ACSARInterface::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:266:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  266 | turn_type ACSARInterface::write([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &period)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:266:109:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  266 | write(const rclcpp::Time &time, [01;35m[Kconst rclcpp::Duration &period[m[K)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+[100%] [32m[1mLinking CXX shared library librobot_control.so[0m
+[100%] Built target robot_control
+-- Install configuration: ""
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/src/lifecycle_hardware_interface.xml
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/librobot_control.so
+-- Set runtime path of "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/librobot_control.so" to ""
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/speed_controller.hpp
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/Hardware_Interface.hpp
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/include/robot_control/noisy_controller.hpp
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/diff_controller_sim.yaml
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/robot_controllers.yaml
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/config/diff_controller.yaml
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/diff_controller_sim.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/controller.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/launch/diff_controller.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/library_path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/library_path.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/package_run_dependencies/robot_control
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/parent_prefix_path/robot_control
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/environment/path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.bash
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.zsh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/local_setup.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/packages/robot_control
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/robot_control
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/cmake/robot_controlConfig-version.cmake
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.xml

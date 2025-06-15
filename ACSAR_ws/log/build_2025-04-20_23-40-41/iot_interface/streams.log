@@ -1,0 +1,35 @@
+[0.010s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target mqtt_interface[0m
+[0.071s] [ 50%] [32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o[0m
+[2.725s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In member function ‘[01m[Kvoid MQTTInterface::customer_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.725s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:90:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.725s]    63 |   void MQTTInterface::customer_callback([01;35m[Kconst geometry_msgs::msg::PoseStamped::SharedPtr msg[m[K) {
+[2.725s]       |                                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[12.170s] [100%] [32m[1mLinking CXX executable mqtt_interface[0m
+[14.437s] [100%] Built target mqtt_interface
+[14.446s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12
+[14.454s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface
+[14.459s] -- Install configuration: ""
+[14.460s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/lib/iot_interface/mqtt_interface
+[14.463s] -- Set runtime path of "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/lib/iot_interface/mqtt_interface" to ""
+[14.463s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include/
+[14.463s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//iot_interface
+[14.463s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//iot_interface/mqtt_interface.hpp
+[14.464s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//nlohmann
+[14.464s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//nlohmann/json.hpp
+[14.464s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/package_run_dependencies/iot_interface
+[14.465s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/parent_prefix_path/iot_interface
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/ament_prefix_path.sh
+[14.465s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/ament_prefix_path.dsv
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/path.sh
+[14.465s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/path.dsv
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.bash
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.sh
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.zsh
+[14.465s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.dsv
+[14.465s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/package.dsv
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/packages/iot_interface
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/cmake/iot_interfaceConfig.cmake
+[14.465s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/cmake/iot_interfaceConfig-version.cmake
+[14.466s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/package.xml
+[14.467s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface

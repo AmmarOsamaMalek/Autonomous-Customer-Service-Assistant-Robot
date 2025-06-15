@@ -1,0 +1,4 @@
+Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav -- -j12 -l12
+Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav -- -j12 -l12
+Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav
+Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav

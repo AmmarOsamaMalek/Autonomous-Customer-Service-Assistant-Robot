@@ -1,0 +1,30 @@
+[0.025s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization -- -j12 -l12
+[0.073s] [100%] Built target kalman_filter
+[0.127s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization -- -j12 -l12
+[0.128s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization
+[0.132s] -- Install configuration: ""
+[0.133s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib/service_robot_localization/kalman_filter
+[0.133s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/include/include
+[0.133s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/include/include/service_robot_localization
+[0.133s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/include/include/service_robot_localization/kalman_filter.hpp
+[0.133s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/launch
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/launch/local_localization.launch.py
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/config
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/config/ekf.yaml
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/config/mapper_params_online_async.yaml
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/ament_index/resource_index/package_run_dependencies/service_robot_localization
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/ament_index/resource_index/parent_prefix_path/service_robot_localization
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/environment/ament_prefix_path.sh
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/environment/ament_prefix_path.dsv
+[0.134s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/environment/path.sh
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/environment/path.dsv
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/local_setup.bash
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/local_setup.sh
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/local_setup.zsh
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/local_setup.dsv
+[0.135s] -- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.dsv
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/ament_index/resource_index/packages/service_robot_localization
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/cmake/service_robot_localizationConfig.cmake
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/cmake/service_robot_localizationConfig-version.cmake
+[0.135s] -- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.xml
+[0.137s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization

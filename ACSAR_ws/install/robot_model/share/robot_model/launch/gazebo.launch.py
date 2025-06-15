@@ -3,6 +3,7 @@ from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument,SetEnvironmentVariable,IncludeLaunchDescription
 import os
 from os import pathsep
+from launch.actions import IncludeLaunchDescription, ExecuteProcess, TimerAction
 from ament_index_python.packages import get_package_share_directory,get_package_prefix
 from launch_ros.parameter_descriptions import ParameterValue
 from launch.substitutions import Command, LaunchConfiguration
@@ -16,11 +17,18 @@ def generate_launch_description():
     model_path = os.path.join(robot_model,"models")
     model_path += pathsep + os.path.join(robot_model_prefix,"share")
     
-    env_variable = SetEnvironmentVariable("GAZEB_MODEL_PATH",model_path)
+    env_variable = SetEnvironmentVariable("GAZEBO_MODEL_PATH",model_path)
+    
+    # Add world file argument
+    world_arg = DeclareLaunchArgument(
+        name="world",
+        default_value="/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model/worlds/worlds/ACSAR.world",
+        description="Absolute path to Gazebo world file"
+    )
     
     model_arg = DeclareLaunchArgument(
         name="model",
-        default_value=os.path.join(robot_model, "urdf", "service_robot.urdf.xml" ),
+        default_value=os.path.join(robot_model, "urdf", "service_robot.urdf.xml"),
         description="Absolute path to robot URDF file"
     )
     
@@ -32,12 +40,18 @@ def generate_launch_description():
         parameters=[{"robot_description": robot_description}]
     )
     
-    start_gazebo_server = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(
+    # Modify Gazebo server launch to include world file
+    start_gazebo_server = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory("gazebo_ros"),
+            "launch",
+            "gzserver.launch.py"
+        )),
+        launch_arguments=[('world', LaunchConfiguration('world'))]
+    )
+    
+    start_gazebo_client = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(
         get_package_share_directory("gazebo_ros"),
-        "launch",
-        "gzserver.launch.py"
-    )))
-    start_gazebo_client = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(get_package_share_directory("gazebo_ros"),
         "launch",
         "gzclient.launch.py")))
     
@@ -48,11 +62,24 @@ def generate_launch_description():
         output="screen"
     )
     
+     # Launch RViz2 with delay
+    rviz2_node = ExecuteProcess(
+        cmd=['ros2', 'run', 'rviz2', 'rviz2'],
+        output='screen'
+    )
+    
+    rviz_delay = TimerAction(
+        period=15.0,
+        actions=[rviz2_node]
+    )
+    
     return LaunchDescription([
         env_variable,
+        world_arg,
         model_arg,
         robot_state_publisher,
         start_gazebo_server,
         start_gazebo_client,
-        spawn_robot
+        spawn_robot,
+        rviz2_node
     ])

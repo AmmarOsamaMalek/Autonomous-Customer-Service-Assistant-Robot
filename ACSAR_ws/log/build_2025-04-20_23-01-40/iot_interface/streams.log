@@ -1,0 +1,11 @@
+[0.032s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12
+[0.121s] [ 50%] [32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o[0m
+[0.349s] In file included from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[0.349s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:7:10:[m[K [01;31m[Kfatal error: [m[Kmqtt/async_client.h: No such file or directory
+[0.349s]     7 | #include [01;31m[K<mqtt/async_client.h>[m[K
+[0.349s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[0.349s] compilation terminated.
+[0.351s] gmake[2]: *** [CMakeFiles/mqtt_interface.dir/build.make:76: CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o] Error 1
+[0.352s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mqtt_interface.dir/all] Error 2
+[0.352s] gmake: *** [Makefile:146: all] Error 2
+[0.354s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12

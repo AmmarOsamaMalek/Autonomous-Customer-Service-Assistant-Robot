@@ -1,0 +1,113 @@
+[0.000000] (-) TimerEvent: {}
+[0.000590] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.000710] (-) JobUnselected: {'identifier': 'robot_model'}
+[0.000732] (-) JobUnselected: {'identifier': 'robot_nav'}
+[0.000749] (-) JobUnselected: {'identifier': 'robot_perception'}
+[0.000764] (-) JobUnselected: {'identifier': 'rplidar_ros'}
+[0.000779] (-) JobUnselected: {'identifier': 'service_robot_localization'}
+[0.000796] (iot_interface) JobQueued: {'identifier': 'iot_interface', 'dependencies': OrderedDict()}
+[0.000815] (iot_interface) JobStarted: {'identifier': 'iot_interface'}
+[0.007417] (iot_interface) JobProgress: {'identifier': 'iot_interface', 'progress': 'cmake'}
+[0.008460] (iot_interface) JobProgress: {'identifier': 'iot_interface', 'progress': 'build'}
+[0.008601] (iot_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface', '--', '-j12', '-l12'], 'cwd': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ammar'), ('LC_TIME', 'ar_EG.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ammar'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/ammar/paho.mqtt.cpp'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'ar_EG.UTF-8'), ('MANAGERPID', '1982'), ('SYSTEMD_EXEC_PID', '2148'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4977'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ammar'), ('JOURNAL_STREAM', '8:12073'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ammar'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ammar/miniconda3/condabin:/home/ammar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ammar-G5-5500:@/tmp/.ICE-unix/2123,unix/ammar-G5-5500:/tmp/.ICE-unix/2123'), ('INVOCATION_ID', '07789c89a36a426cb6088a7338e3ffe8'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ar_EG.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'ar_EG.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.G2HO52'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/ammar/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ar_EG.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:cfa20163-fcae-4f56-8828-8ad8fbe143f9'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'ar_EG.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'ar_EG.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/ammar/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ar_EG.UTF-8'), ('LC_PAPER', 'ar_EG.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface:/opt/ros/humble')]), 'shell': False}
+[0.052177] (iot_interface) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target mqtt_interface\x1b[0m\n'}
+[0.075500] (iot_interface) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o\x1b[0m\n'}
+[0.100004] (-) TimerEvent: {}
+[0.200232] (-) TimerEvent: {}
+[0.300470] (-) TimerEvent: {}
+[0.400787] (-) TimerEvent: {}
+[0.501068] (-) TimerEvent: {}
+[0.601309] (-) TimerEvent: {}
+[0.701533] (-) TimerEvent: {}
+[0.801791] (-) TimerEvent: {}
+[0.902064] (-) TimerEvent: {}
+[1.002321] (-) TimerEvent: {}
+[1.102585] (-) TimerEvent: {}
+[1.202847] (-) TimerEvent: {}
+[1.303084] (-) TimerEvent: {}
+[1.403347] (-) TimerEvent: {}
+[1.503610] (-) TimerEvent: {}
+[1.603882] (-) TimerEvent: {}
+[1.704154] (-) TimerEvent: {}
+[1.804416] (-) TimerEvent: {}
+[1.904688] (-) TimerEvent: {}
+[2.004968] (-) TimerEvent: {}
+[2.105250] (-) TimerEvent: {}
+[2.205516] (-) TimerEvent: {}
+[2.305779] (-) TimerEvent: {}
+[2.406050] (-) TimerEvent: {}
+[2.506315] (-) TimerEvent: {}
+[2.606577] (-) TimerEvent: {}
+[2.706545] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MQTTInterface::customer_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.706706] (-) TimerEvent: {}
+[2.706789] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.706874] (iot_interface) StderrLine: {'line': b'   63 |   void MQTTInterface::customer_callback(\x1b[01;35m\x1b[Kconst geometry_msgs::msg::PoseStamped::SharedPtr msg\x1b[m\x1b[K) {\n'}
+[2.706941] (iot_interface) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.724396] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.724524] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMQTTBridge\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.724596] (iot_interface) StderrLine: {'line': b'   81 |     auto node = std::make_shared<\x1b[01;31m\x1b[KMQTTBridge\x1b[m\x1b[K>();\n'}
+[2.724660] (iot_interface) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.724720] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_shared<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.724780] (iot_interface) StderrLine: {'line': b'   81 |     auto node = \x1b[01;31m\x1b[Kstd::make_shared<MQTTBridge>()\x1b[m\x1b[K;\n'}
+[2.724839] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.724993] (iot_interface) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:77\x1b[m\x1b[K,\n'}
+[2.725087] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.725153] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4\x1b[m\x1b[K,\n'}
+[2.725213] (iot_interface) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1\x1b[m\x1b[K:\n'}
+[2.725270] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:875:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.725327] (iot_interface) StderrLine: {'line': b'  875 |     \x1b[01;36m\x1b[Kmake_shared\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.725383] (iot_interface) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.725437] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:875:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.725491] (iot_interface) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.725556] (iot_interface) StderrLine: {'line': b'   81 |     auto node = \x1b[01;31m\x1b[Kstd::make_shared<MQTTBridge>()\x1b[m\x1b[K;\n'}
+[2.725610] (iot_interface) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.806841] (-) TimerEvent: {}
+[2.907115] (-) TimerEvent: {}
+[3.007386] (-) TimerEvent: {}
+[3.107664] (-) TimerEvent: {}
+[3.207925] (-) TimerEvent: {}
+[3.308189] (-) TimerEvent: {}
+[3.408478] (-) TimerEvent: {}
+[3.508747] (-) TimerEvent: {}
+[3.609036] (-) TimerEvent: {}
+[3.709324] (-) TimerEvent: {}
+[3.809619] (-) TimerEvent: {}
+[3.909895] (-) TimerEvent: {}
+[4.010161] (-) TimerEvent: {}
+[4.110436] (-) TimerEvent: {}
+[4.210705] (-) TimerEvent: {}
+[4.310964] (-) TimerEvent: {}
+[4.411223] (-) TimerEvent: {}
+[4.511487] (-) TimerEvent: {}
+[4.611752] (-) TimerEvent: {}
+[4.712024] (-) TimerEvent: {}
+[4.812287] (-) TimerEvent: {}
+[4.912551] (-) TimerEvent: {}
+[5.012807] (-) TimerEvent: {}
+[5.113076] (-) TimerEvent: {}
+[5.213336] (-) TimerEvent: {}
+[5.313602] (-) TimerEvent: {}
+[5.413875] (-) TimerEvent: {}
+[5.514136] (-) TimerEvent: {}
+[5.614396] (-) TimerEvent: {}
+[5.714659] (-) TimerEvent: {}
+[5.814915] (-) TimerEvent: {}
+[5.915175] (-) TimerEvent: {}
+[6.015437] (-) TimerEvent: {}
+[6.115705] (-) TimerEvent: {}
+[6.215946] (-) TimerEvent: {}
+[6.316231] (-) TimerEvent: {}
+[6.416513] (-) TimerEvent: {}
+[6.516796] (-) TimerEvent: {}
+[6.617062] (-) TimerEvent: {}
+[6.717373] (-) TimerEvent: {}
+[6.817675] (-) TimerEvent: {}
+[6.917956] (-) TimerEvent: {}
+[7.018184] (-) TimerEvent: {}
+[7.096029] (iot_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/mqtt_interface.dir/build.make:76: CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o] Error 1\n'}
+[7.096255] (iot_interface) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mqtt_interface.dir/all] Error 2\n'}
+[7.096459] (iot_interface) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.098680] (iot_interface) CommandEnded: {'returncode': 2}
+[7.109369] (iot_interface) JobEnded: {'identifier': 'iot_interface', 'rc': 2}
+[7.118380] (-) TimerEvent: {}
+[7.120944] (-) EventReactorShutdown: {}

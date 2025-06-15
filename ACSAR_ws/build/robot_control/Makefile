@@ -198,41 +198,41 @@ robot_control_uninstall/fast:
 .PHONY : robot_control_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named speed_controller
+# Target rules for targets named robot_control
 
 # Build rule for target.
-speed_controller: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 speed_controller
-.PHONY : speed_controller
+robot_control: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 robot_control
+.PHONY : robot_control
 
 # fast build rule for target.
-speed_controller/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/build
-.PHONY : speed_controller/fast
+robot_control/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/build
+.PHONY : robot_control/fast
 
-src/speed_controller.o: src/speed_controller.cpp.o
-.PHONY : src/speed_controller.o
+src/Hardware_Interface.o: src/Hardware_Interface.cpp.o
+.PHONY : src/Hardware_Interface.o
 
 # target to build an object file
-src/speed_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/src/speed_controller.cpp.o
-.PHONY : src/speed_controller.cpp.o
+src/Hardware_Interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o
+.PHONY : src/Hardware_Interface.cpp.o
 
-src/speed_controller.i: src/speed_controller.cpp.i
-.PHONY : src/speed_controller.i
+src/Hardware_Interface.i: src/Hardware_Interface.cpp.i
+.PHONY : src/Hardware_Interface.i
 
 # target to preprocess a source file
-src/speed_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/src/speed_controller.cpp.i
-.PHONY : src/speed_controller.cpp.i
+src/Hardware_Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.i
+.PHONY : src/Hardware_Interface.cpp.i
 
-src/speed_controller.s: src/speed_controller.cpp.s
-.PHONY : src/speed_controller.s
+src/Hardware_Interface.s: src/Hardware_Interface.cpp.s
+.PHONY : src/Hardware_Interface.s
 
 # target to generate assembly for a file
-src/speed_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/src/speed_controller.cpp.s
-.PHONY : src/speed_controller.cpp.s
+src/Hardware_Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.s
+.PHONY : src/Hardware_Interface.cpp.s
 
 # Help Target
 help:
@@ -249,10 +249,10 @@ help:
 	@echo "... test"
 	@echo "... robot_control_uninstall"
 	@echo "... uninstall"
-	@echo "... speed_controller"
-	@echo "... src/speed_controller.o"
-	@echo "... src/speed_controller.i"
-	@echo "... src/speed_controller.s"
+	@echo "... robot_control"
+	@echo "... src/Hardware_Interface.o"
+	@echo "... src/Hardware_Interface.i"
+	@echo "... src/Hardware_Interface.s"
 .PHONY : help
 
 

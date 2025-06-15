@@ -1,0 +1,11 @@
+[ 11%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/src/rplidar_node.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/sdk/src/arch/linux/net_serial.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/sdk/src/arch/linux/net_socket.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/sdk/src/arch/linux/timer.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/sdk/src/hal/thread.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/rplidar_composition_node.dir/sdk/src/rplidar_driver.cpp.o[0m
+[ 77%] [32m[1mLinking CXX shared library librplidar_composition_node.so[0m
+[ 77%] Built target rplidar_composition_node
+[ 88%] [32mBuilding CXX object CMakeFiles/rplidar_composition.dir/src/standalone_rplidar.cpp.o[0m
+[100%] [32m[1mLinking CXX executable rplidar_composition[0m
+[100%] Built target rplidar_composition

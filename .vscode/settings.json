@@ -76,7 +76,24 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "core": "cpp"
+        "core": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "valarray": "cpp",
+        "csetjmp": "cpp",
+        "barrier": "cpp",
+        "charconv": "cpp",
+        "coroutine": "cpp",
+        "cuchar": "cpp",
+        "netfwd": "cpp",
+        "source_location": "cpp",
+        "latch": "cpp",
+        "scoped_allocator": "cpp",
+        "syncstream": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

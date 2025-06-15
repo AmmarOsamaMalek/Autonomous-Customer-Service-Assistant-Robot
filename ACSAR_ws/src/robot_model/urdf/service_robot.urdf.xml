@@ -12,54 +12,6 @@
     </material>
 
 
-    <transmission name="wheel_front_left_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_front_left_joint">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_front_left_motor">
-            <mechanicalReduction>1</mechanicalReduction>
-            <maxEffort>0.32</maxEffort>
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </actuator>
-    </transmission>
-    
-    <transmission name="wheel_front_right_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_front_right_joint">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_front_right_motor">
-            <mechanicalReduction>1</mechanicalReduction>
-            <maxEffort>0.32</maxEffort>
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </actuator>
-    </transmission>
-    
-    <transmission name="wheel_back_left_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_back_left_joint">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_back_left_motor">
-            <mechanicalReduction>1</mechanicalReduction>
-            <maxEffort>0.32</maxEffort>
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </actuator>
-    </transmission>
-    
-    <transmission name="wheel_back_right_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_back_right_joint">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_back_right_motor">
-            <mechanicalReduction>1</mechanicalReduction>
-            <maxEffort>0.32</maxEffort>
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-        </actuator>
-    </transmission>
-
 
 
     <ros2_control name="robot_system" type="system">
@@ -522,7 +474,7 @@
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
            <robot_param>robot_description</robot_param>
            <robot_param_node>robot_state_publisher</robot_param_node>
-            <parameters>$(find robot_control)/config/diff_controller.yaml</parameters>
+            <parameters>$(find robot_control)/config/diff_controller_sim.yaml</parameters>
         </plugin>
     </gazebo>
 

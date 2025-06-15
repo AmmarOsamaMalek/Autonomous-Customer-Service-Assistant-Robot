@@ -1,0 +1,31 @@
+[35m[1mConsolidate compiler generated dependencies of target mqtt_interface[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o[0m
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In member function ‘[01m[Kvoid MQTTInterface::customer_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:90:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   63 |   void MQTTInterface::customer_callback([01;35m[Kconst geometry_msgs::msg::PoseStamped::SharedPtr msg[m[K) {
+      |                                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[100%] [32m[1mLinking CXX executable mqtt_interface[0m
+[100%] Built target mqtt_interface
+-- Install configuration: ""
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/lib/iot_interface/mqtt_interface
+-- Set runtime path of "/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/lib/iot_interface/mqtt_interface" to ""
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include/
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//iot_interface
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//iot_interface/mqtt_interface.hpp
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//nlohmann
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/include//nlohmann/json.hpp
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/package_run_dependencies/iot_interface
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/parent_prefix_path/iot_interface
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/ament_prefix_path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/environment/path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.bash
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.zsh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/local_setup.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/package.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/ament_index/resource_index/packages/iot_interface
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/cmake/iot_interfaceConfig.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/cmake/iot_interfaceConfig-version.cmake
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/iot_interface/share/iot_interface/package.xml

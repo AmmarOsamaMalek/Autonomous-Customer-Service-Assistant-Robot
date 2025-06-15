@@ -1,0 +1,71 @@
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_activate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:134:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  134 | :CallbackReturn on_activate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+      |                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_deactivate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:194:86:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  194 | allbackReturn on_deactivate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+      |                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:6[m[K:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:316:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kposition_states_[m[K’ was not declared in this scope
+  316 |                     "FL pos: %.2f rad, vel: %.2f rad/s", [01;31m[Kposition_states_[m[K[0], velocity_states_[0]);
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:316:79:[m[K [01;31m[Kerror: [m[K‘[01m[Kvelocity_states_[m[K’ was not declared in this scope
+  316 |   "FL pos: %.2f rad, vel: %.2f rad/s", position_states_[0], [01;31m[Kvelocity_states_[m[K[0]);
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:318:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kposition_states_[m[K’ was not declared in this scope
+  318 |                     "BL pos: %.2f rad, vel: %.2f rad/s", [01;31m[Kposition_states_[m[K[1], velocity_states_[1]);
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:318:79:[m[K [01;31m[Kerror: [m[K‘[01m[Kvelocity_states_[m[K’ was not declared in this scope
+  318 |   "BL pos: %.2f rad, vel: %.2f rad/s", position_states_[1], [01;31m[Kvelocity_states_[m[K[1]);
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:320:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kposition_states_[m[K’ was not declared in this scope
+  320 |                     "FR pos: %.2f rad, vel: %.2f rad/s", [01;31m[Kposition_states_[m[K[2], velocity_states_[2]);
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:320:79:[m[K [01;31m[Kerror: [m[K‘[01m[Kvelocity_states_[m[K’ was not declared in this scope
+  320 |   "FR pos: %.2f rad, vel: %.2f rad/s", position_states_[2], [01;31m[Kvelocity_states_[m[K[2]);
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:322:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kposition_states_[m[K’ was not declared in this scope
+  322 |                     "BR pos: %.2f rad, vel: %.2f rad/s", [01;31m[Kposition_states_[m[K[3], velocity_states_[3]);
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:322:79:[m[K [01;31m[Kerror: [m[K‘[01m[Kvelocity_states_[m[K’ was not declared in this scope
+  322 |   "BR pos: %.2f rad, vel: %.2f rad/s", position_states_[3], [01;31m[Kvelocity_states_[m[K[3]);
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:339:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+  339 |         [01;31m[Kpublisher_[m[K->publish(twist_msg);
+      |         [01;31m[K^~~~~~~~~~[m[K
+      |         [32m[Krmw_publisher_t[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:248:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  248 |   hardware_interface::return_type read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+      |                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:360:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  360 |  hardware_interface::return_type write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+      |                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:360:95:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  360 | e write(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K) override
+      |                                    [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/robot_control.dir/build.make:76: CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/robot_control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

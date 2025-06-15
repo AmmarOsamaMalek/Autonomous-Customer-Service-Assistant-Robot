@@ -1,0 +1,5 @@
+[0.025s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros -- -j12 -l12
+[0.075s] [ 77%] Built target rplidar_composition_node
+[0.096s] [100%] Built target rplidar_composition
+[0.539s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros -- -j12 -l12
+[0.540s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros

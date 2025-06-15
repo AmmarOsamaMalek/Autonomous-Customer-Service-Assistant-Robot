@@ -1,0 +1,4 @@
+[0.032s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization -- -j12 -l12
+[0.104s] [ 50%] [32mBuilding CXX object CMakeFiles/kalman_filter.dir/src/kalman_filter.cpp.o[0m
+[14.589s] [100%] [32m[1mLinking CXX executable kalman_filter[0m
+[15.152s] [100%] Built target kalman_filter

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="./robot_control/lib/librobot_control.so">
+  <class name="robot_control/SimpleHardwareInterface"
+         type="robot_control::SimpleHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware Interface for differential drive robot using lifecycle nodes
+    </description>
+  </class>
+</library>

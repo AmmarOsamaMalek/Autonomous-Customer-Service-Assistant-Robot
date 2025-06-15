@@ -22,13 +22,13 @@ install(PROGRAMS
 )
 
 install(PROGRAMS
-  scripts/process_image.py
+  scripts/Emotion_Recognition.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(PROGRAMS
-  scripts/detect_ball.py
-  DESTINATION lib/${PROJECT_NAME}
+install(
+  DIRECTORY config launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()

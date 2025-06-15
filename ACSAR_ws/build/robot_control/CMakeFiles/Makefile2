@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/speed_controller.dir/all
+all: CMakeFiles/robot_control.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,7 +73,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/robot_control_uninstall.dir/clean
-clean: CMakeFiles/speed_controller.dir/clean
+clean: CMakeFiles/robot_control.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -129,30 +129,30 @@ CMakeFiles/robot_control_uninstall.dir/clean:
 .PHONY : CMakeFiles/robot_control_uninstall.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/speed_controller.dir
+# Target rules for target CMakeFiles/robot_control.dir
 
 # All Build rule for target.
-CMakeFiles/speed_controller.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control/CMakeFiles --progress-num=1,2 "Built target speed_controller"
-.PHONY : CMakeFiles/speed_controller.dir/all
+CMakeFiles/robot_control.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control/CMakeFiles --progress-num=1,2 "Built target robot_control"
+.PHONY : CMakeFiles/robot_control.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/speed_controller.dir/rule: cmake_check_build_system
+CMakeFiles/robot_control.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/speed_controller.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/robot_control.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control/CMakeFiles 0
-.PHONY : CMakeFiles/speed_controller.dir/rule
+.PHONY : CMakeFiles/robot_control.dir/rule
 
 # Convenience name for target.
-speed_controller: CMakeFiles/speed_controller.dir/rule
-.PHONY : speed_controller
+robot_control: CMakeFiles/robot_control.dir/rule
+.PHONY : robot_control
 
 # clean rule for target.
-CMakeFiles/speed_controller.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/speed_controller.dir/build.make CMakeFiles/speed_controller.dir/clean
-.PHONY : CMakeFiles/speed_controller.dir/clean
+CMakeFiles/robot_control.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control.dir/build.make CMakeFiles/robot_control.dir/clean
+.PHONY : CMakeFiles/robot_control.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

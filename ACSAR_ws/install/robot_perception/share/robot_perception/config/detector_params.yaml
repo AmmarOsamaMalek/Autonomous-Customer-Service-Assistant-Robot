@@ -1,0 +1,21 @@
+# Parameters for the enhanced hand detector node
+enhanced_hand_detector:
+  ros__parameters:
+    # Processing control
+    processing_rate: 30.0      # Hz (how many frames to process per second)
+    downscale_factor: 2        # Downscale image for faster processing (1 = no downscaling)
+    
+    # Hand detection parameters
+    hand_raised_threshold: 0.25  # Threshold for determining if hand is raised
+    detection_confidence: 0.6    # MediaPipe hand detection confidence threshold
+    tracking_confidence: 0.5     # MediaPipe hand tracking confidence threshold
+    model_complexity: 0          # MediaPipe model complexity (0 is fastest, 1 is more accurate)
+    
+    # Camera parameters (update these for your specific camera)
+    camera_fx: 460.0     # Focal length x
+    camera_fy: 460.0     # Focal length y
+    camera_cx: 320.0     # Principal point x
+    camera_cy: 240.0     # Principal point y
+    
+    # Debug mode
+    debug_mode: true     # Enable debug visualization

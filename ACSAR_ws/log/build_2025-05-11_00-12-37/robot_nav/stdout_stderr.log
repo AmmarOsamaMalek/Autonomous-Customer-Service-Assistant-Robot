@@ -1,0 +1,27 @@
+-- Install configuration: ""
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/robot_nav/Autonomous_navigation.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/robot_nav/Speach_recorder.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/robot_nav/test_speech.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch/Navigation_system.launch.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch/Navigation_system_sim.launch.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch/nodes.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch/nav.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/launch/nav_sim.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/config
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/config/nav2_params.yaml
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/ament_index/resource_index/package_run_dependencies/robot_nav
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/ament_index/resource_index/parent_prefix_path/robot_nav
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/environment/path.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/environment/path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/local_setup.bash
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/local_setup.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/local_setup.zsh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/local_setup.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/ament_index/resource_index/packages/robot_nav
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/cmake/robot_navConfig.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/cmake/robot_navConfig-version.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.xml

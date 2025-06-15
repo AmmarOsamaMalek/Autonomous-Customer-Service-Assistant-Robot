@@ -1,0 +1,334 @@
+[0.013s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target mqtt_interface[0m
+[0.076s] [ 50%] [32mBuilding CXX object CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o[0m
+[2.719s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In constructor ‘[01m[KMQTTInterface::MQTTInterface()[m[K’:
+[2.719s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:11:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_subscriber[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_subscriber_[m[K’?
+[2.719s]    11 |     [01;31m[Kodom_subscriber[m[K = this->create_subscription<nav_msgs::msg::Odometry>(
+[2.719s]       |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.719s]       |     [32m[Kodom_subscriber_[m[K
+[2.731s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcustomer_subscriber[m[K’ was not declared in this scope; did you mean ‘[01m[Kcustomer_subscriber_[m[K’?
+[2.731s]    14 |     [01;31m[Kcustomer_subscriber[m[K = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+[2.731s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.731s]       |     [32m[Kcustomer_subscriber_[m[K
+[2.744s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K At global scope:
+[2.744s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:24:1:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ does not name a type
+[2.744s]    24 | [01;31m[KMQTTBridge[m[K::~MQTTBridge() {
+[2.744s]       | [01;31m[K^~~~~~~~~~[m[K
+[2.744s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:29:6:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTINterface[m[K’ has not been declared
+[2.744s]    29 | void [01;31m[KMQTTINterface[m[K::mqtt_connect() {
+[2.744s]       |      [01;31m[K^~~~~~~~~~~~~[m[K
+[2.748s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kvoid mqtt_connect()[m[K’:
+[2.748s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:35:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kmqtt_client_[m[K’ was not declared in this scope; did you mean ‘[01m[KMQTTClient[m[K’?
+[2.748s]    35 |     if ((rc = MQTTClient_connect([01;31m[Kmqtt_client_[m[K, &conn_opts)) != MQTTCLIENT_SUCCESS) {
+[2.749s]       |                                  [01;31m[K^~~~~~~~~~~~[m[K
+[2.749s]       |                                  [32m[KMQTTClient[m[K
+[2.749s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.749s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.750s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.750s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.750s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.750s]    36 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.750s]       |                      [01;31m[K^~~~[m[K
+[2.750s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.750s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.750s]    36 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.750s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.750s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.750s]    36 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.750s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.750s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.750s]    36 |         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.750s]       |         [01;31m[K^~~~~~~~~~~~[m[K
+[2.750s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.750s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.750s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.751s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.751s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.751s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.751s]    36 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.751s]       |                      [01;31m[K^~~~[m[K
+[2.751s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:36:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.751s]    36 |         RCLCPP_ERROR([01;31m[Kthis[m[K->get_logger(), "Failed to connect to MQTT broker, return code: %d", rc);
+[2.751s]       |                      [01;31m[K^~~~[m[K
+[2.751s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.751s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.752s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.752s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.752s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.752s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.752s]    39 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Connected to MQTT broker");
+[2.752s]       |                 [01;31m[K^~~~[m[K
+[2.752s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.752s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.752s]    39 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Connected to MQTT broker");
+[2.752s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.752s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.753s]    39 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Connected to MQTT broker");
+[2.753s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.753s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.753s]    39 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Connected to MQTT broker");
+[2.753s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.753s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.753s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.753s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.754s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.754s]    39 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Connected to MQTT broker");
+[2.754s]       |                 [01;31m[K^~~~[m[K
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:39:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.754s]    39 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Connected to MQTT broker");
+[2.754s]       |                 [01;31m[K^~~~[m[K
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K At global scope:
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:41:6:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ has not been declared
+[2.754s]    41 | void [01;31m[KMQTTBridge[m[K::mqtt_publish(const std::string& topic, const std::string& payload) {
+[2.754s]       |      [01;31m[K^~~~~~~~~~[m[K
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kvoid mqtt_publish(const string&, const string&)[m[K’:
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:49:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kmqtt_client_[m[K’ was not declared in this scope; did you mean ‘[01m[KMQTTClient[m[K’?
+[2.754s]    49 |     MQTTClient_publishMessage([01;31m[Kmqtt_client_[m[K, topic.c_str(), &pubmsg, &token);
+[2.754s]       |                               [01;31m[K^~~~~~~~~~~~[m[K
+[2.754s]       |                               [32m[KMQTTClient[m[K
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K At global scope:
+[2.754s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:53:8:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ has not been declared
+[2.754s]    53 |   void [01;31m[KMQTTBridge[m[K::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg) {
+[2.755s]       |        [01;31m[K^~~~~~~~~~[m[K
+[2.758s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kvoid odom_callback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.758s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:54:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kx_[m[K’ was not declared in this scope
+[2.758s]    54 |     [01;31m[Kx_[m[K = msg->pose.pose.position.x;
+[2.758s]       |     [01;31m[K^~[m[K
+[2.760s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:55:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ky_[m[K’ was not declared in this scope; did you mean ‘[01m[Kyn[m[K’?
+[2.760s]    55 |     [01;31m[Ky_[m[K = msg->pose.pose.position.y;
+[2.760s]       |     [01;31m[K^~[m[K
+[2.760s]       |     [32m[Kyn[m[K
+[2.763s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:56:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktheta_[m[K’ was not declared in this scope
+[2.763s]    56 |     [01;31m[Ktheta_[m[K = msg->pose.pose.orientation.z;
+[2.763s]       |     [01;31m[K^~~~~~[m[K
+[2.771s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:58:61:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{{"x", x_}, {"y", y_}, {"theta", theta_}}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kjson[m[K’ {aka ‘[01m[Knlohmann::json_abi_v3_11_3::basic_json<>[m[K’}
+[2.771s]    58 |     json position = {{"x", x_}, {"y", y_}, {"theta", theta_}[01;31m[K}[m[K;
+[2.771s]       |                                                             [01;31m[K^[m[K
+[2.771s]       |                                                             [01;31m[K|[m[K
+[2.772s]       |                                                             [01;31m[K<brace-enclosed initializer list>[m[K
+[2.772s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.772s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.772s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.772s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.772s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.772s]    60 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published position: %s", position.dump().c_str());
+[2.773s]       |                 [01;31m[K^~~~[m[K
+[2.773s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.773s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.773s]    60 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published position: %s", position.dump().c_str());
+[2.773s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.773s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.773s]    60 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published position: %s", position.dump().c_str());
+[2.773s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.773s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.773s]    60 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published position: %s", position.dump().c_str());
+[2.773s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.773s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.773s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.774s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.774s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.774s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.774s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.774s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.774s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.774s]    60 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published position: %s", position.dump().c_str());
+[2.774s]       |                 [01;31m[K^~~~[m[K
+[2.774s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:60:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.774s]    60 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published position: %s", position.dump().c_str());
+[2.774s]       |                 [01;31m[K^~~~[m[K
+[2.774s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K At global scope:
+[2.774s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:8:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ has not been declared
+[2.774s]    63 |   void [01;31m[KMQTTBridge[m[K::customer_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg) {
+[2.774s]       |        [01;31m[K^~~~~~~~~~[m[K
+[2.780s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kvoid customer_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.780s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:64:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcustomer_detected_[m[K’ was not declared in this scope
+[2.780s]    64 |     [01;31m[Kcustomer_detected_[m[K = true;
+[2.780s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.784s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:65:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdelivered_[m[K’ was not declared in this scope
+[2.784s]    65 |     [01;31m[Kdelivered_[m[K = true;
+[2.784s]       |     [01;31m[K^~~~~~~~~~[m[K
+[2.784s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.784s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.784s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.784s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.784s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.785s]    66 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Customer detected, marking order as delivered");
+[2.785s]       |                 [01;31m[K^~~~[m[K
+[2.785s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.785s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.785s]    66 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Customer detected, marking order as delivered");
+[2.785s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.785s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.785s]    66 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Customer detected, marking order as delivered");
+[2.785s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.785s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.785s]    66 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Customer detected, marking order as delivered");
+[2.785s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.785s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.785s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.785s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.785s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.785s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.785s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.786s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.786s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.786s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.786s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.786s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.786s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.786s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.786s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.786s]    66 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Customer detected, marking order as delivered");
+[2.786s]       |                 [01;31m[K^~~~[m[K
+[2.786s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:66:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.786s]    66 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Customer detected, marking order as delivered");
+[2.786s]       |                 [01;31m[K^~~~[m[K
+[2.786s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:63:87:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.786s]    63 |   void MQTTBridge::customer_callback([01;35m[Kconst geometry_msgs::msg::PoseStamped::SharedPtr msg[m[K) {
+[2.786s]       |                                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.786s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K At global scope:
+[2.786s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:69:8:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ has not been declared
+[2.786s]    69 |   void [01;31m[KMQTTBridge[m[K::timer_callback() {
+[2.787s]       |        [01;31m[K^~~~~~~~~~[m[K
+[2.789s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kvoid timer_callback()[m[K’:
+[2.789s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:70:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kcustomer_detected_[m[K’ was not declared in this scope
+[2.789s]    70 |     if (![01;31m[Kcustomer_detected_[m[K) {
+[2.789s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.793s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:71:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kdelivered_[m[K’ was not declared in this scope
+[2.793s]    71 |       [01;31m[Kdelivered_[m[K = false;
+[2.793s]       |       [01;31m[K^~~~~~~~~~[m[K
+[2.796s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:33:[m[K [01;31m[Kerror: [m[K‘[01m[Korder_id_[m[K’ was not declared in this scope
+[2.796s]    73 |     json status = {{"order_id", [01;31m[Korder_id_[m[K}, {"delivered", delivered_}};
+[2.796s]       |                                 [01;31m[K^~~~~~~~~[m[K
+[2.799s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kdelivered_[m[K’ was not declared in this scope
+[2.799s]    73 |     json status = {{"order_id", order_id_}, {"delivered", [01;31m[Kdelivered_[m[K}};
+[2.799s]       |                                                           [01;31m[K^~~~~~~~~~[m[K
+[2.803s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:73:70:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{{"order_id", <expression error>}, {"delivered", <expression error>}}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kjson[m[K’ {aka ‘[01m[Knlohmann::json_abi_v3_11_3::basic_json<>[m[K’}
+[2.803s]    73 |     json status = {{"order_id", order_id_}, {"delivered", delivered_}[01;31m[K}[m[K;
+[2.803s]       |                                                                      [01;31m[K^[m[K
+[2.803s]       |                                                                      [01;31m[K|[m[K
+[2.803s]       |                                                                      [01;31m[K<brace-enclosed initializer list>[m[K
+[2.804s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.804s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.804s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.804s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.804s]    75 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.804s]       |                 [01;31m[K^~~~[m[K
+[2.804s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.804s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.804s]    75 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.805s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.805s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.805s]    75 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.805s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.805s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.805s]    75 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.805s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.805s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.806s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.806s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.806s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.806s]    75 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.806s]       |                 [01;31m[K^~~~[m[K
+[2.806s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:75:17:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.806s]    75 |     RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Published order status: %s", status.dump().c_str());
+[2.806s]       |                 [01;31m[K^~~~[m[K
+[2.809s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:76:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcustomer_detected_[m[K’ was not declared in this scope
+[2.809s]    76 |     [01;31m[Kcustomer_detected_[m[K = false;
+[2.809s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.813s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.813s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:34:[m[K [01;31m[Kerror: [m[K‘[01m[KMQTTBridge[m[K’ was not declared in this scope
+[2.813s]    81 |     auto node = std::make_shared<[01;31m[KMQTTBridge[m[K>();
+[2.813s]       |                                  [01;31m[K^~~~~~~~~~[m[K
+[2.813s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >()[m[K’
+[2.813s]    81 |     auto node = [01;31m[Kstd::make_shared<MQTTBridge>()[m[K;
+[2.813s]       |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[2.813s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[2.813s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[2.813s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/include/iot_interface/mqtt_interface.hpp:4[m[K,
+[2.813s]                  from [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:1[m[K:
+[2.813s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+[2.813s]   875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+[2.813s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[2.814s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.814s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/iot_interface/src/mqtt_interface.cpp:81:45:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.814s]    81 |     auto node = [01;31m[Kstd::make_shared<MQTTBridge>()[m[K;
+[2.814s]       |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[6.442s] gmake[2]: *** [CMakeFiles/mqtt_interface.dir/build.make:76: CMakeFiles/mqtt_interface.dir/src/mqtt_interface.cpp.o] Error 1
+[6.442s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mqtt_interface.dir/all] Error 2
+[6.442s] gmake: *** [Makefile:146: all] Error 2
+[6.444s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/iot_interface -- -j12 -l12

@@ -1,0 +1,18 @@
+[31mCMake Error at CMakeLists.txt:13 (find_package):
+  By not providing "FindPahoMqttC.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "PahoMqttC", but CMake did not find one.
+
+  Could not find a package configuration file provided by "PahoMqttC" with
+  any of the following names:
+
+    PahoMqttCConfig.cmake
+    pahomqttc-config.cmake
+
+  Add the installation prefix of "PahoMqttC" to CMAKE_PREFIX_PATH or set
+  "PahoMqttC_DIR" to a directory containing one of the above files.  If
+  "PahoMqttC" provides a separate development package or SDK, be sure it has
+  been installed.
+
+[0m
+gmake: *** [Makefile:226: cmake_check_build_system] Error 1

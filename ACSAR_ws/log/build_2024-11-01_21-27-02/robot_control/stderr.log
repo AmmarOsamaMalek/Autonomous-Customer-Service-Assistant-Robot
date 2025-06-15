@@ -1,7 +1,0 @@
-[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:[m[K In member function ‘[01m[Kvoid SpeedController::jointCallback(const JointState&)[m[K’:
-[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:96:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krobot_linear_velocity[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-   96 |     double [01;35m[Krobot_linear_velocity[m[K = (wheel_radius_ / 4.0) * (delta_FL_wheel + delta_FR_wheel + delta_BL_wheel + delta_BR_wheel);
-      |            [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
-[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/speed_controller.cpp:97:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krobot_angular_velocity[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-   97 |     double [01;35m[Krobot_angular_velocity[m[K = (wheel_radius_ / 2.0 * wheel_width_) * (-delta_FL_wheel + delta_FR_wheel - delta_BL_wheel + delta_BR_wheel);
-      |            [01;35m[K^~~~~~~~~~~~~~~~~~~~~~[m[K

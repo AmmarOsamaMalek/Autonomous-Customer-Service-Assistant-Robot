@@ -1,0 +1,3 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/kalman_filter.dir/src/kalman_filter.cpp.o[0m
+[100%] [32m[1mLinking CXX executable kalman_filter[0m
+[100%] Built target kalman_filter

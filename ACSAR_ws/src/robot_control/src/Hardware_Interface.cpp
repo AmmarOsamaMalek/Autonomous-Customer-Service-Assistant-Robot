@@ -1,413 +1,530 @@
-#include "hardware_interface/system_interface.hpp"
-#include "hardware_interface/handle.hpp"
-#include "hardware_interface/hardware_info.hpp"
-#include "hardware_interface/types/hardware_interface_return_values.hpp"
-#include "hardware_interface/types/hardware_interface_type_values.hpp"  
-#include "rclcpp/rclcpp.hpp"
-#include "rclcpp/macros.hpp"
-#include <geometry_msgs/msg/twist.hpp>
-
-#include <fcntl.h>
-#include <termios.h>
-#include <unistd.h>
-#include <errno.h>
-
-#include <vector>
-#include <string>
-#include <cstring>
+#include <robot_control/Hardware_Interface.hpp>
+#include <hardware_interface/types/hardware_interface_return_values.hpp>
+#include <pluginlib/class_list_macros.hpp>
+#include <cmath>
+#include <iomanip>
 #include <chrono>
-#include <thread>
+#include <libserial/SerialPort.h>
+#include <rclcpp/rclcpp.hpp>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_ros/transform_broadcaster.h>
+#include <nav_msgs/msg/odometry.hpp>
+#include <geometry_msgs/msg/transform_stamped.hpp>
 
-namespace robot_control
+
+namespace ACSAR_firmware
 {
-
-class SimpleHardwareInterface : public hardware_interface::SystemInterface
-{
-public:
-    RCLCPP_SHARED_PTR_DEFINITIONS(SimpleHardwareInterface)
-
-    /**
-     * Initializes the hardware interface for a differential drive robot.
-     * 
-     * Sets up serial communication parameters (port, baud rate) and wheel specs from the provided HardwareInfo.
-     * Configures encoder resolution (11 PPR, 87:1 gear ratio, 3828 counts/rev) and initializes storage for joint
-     * positions, velocities, and commands, assuming 2 encoder channels for 4 joints.
-     * returns SUCCESS on proper initialization, or ERROR if parameters are missing or invalid.
-     */
-
-    hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo & info) override
+    ACSARInterface::ACSARInterface(){}
+    
+    ACSARInterface::~ACSARInterface()
     {
-        if (SystemInterface::on_init(info) != CallbackReturn::SUCCESS) {
-            return CallbackReturn::ERROR;
+        if (AVR_.IsOpen())
+        {
+            try
+            {
+                AVR_.Close();
+            }
+            catch (const std::exception& e) {
+                RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Failed to close serial port: %s", e.what());
+            }
         }
-
-        // Check parameters
-        if (info_.hardware_parameters.count("serial_port") == 0 || 
-            info_.hardware_parameters.count("baud_rate") == 0 ||
-            info_.hardware_parameters.count("wheel_diameter") == 0) {
-            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Missing required parameters");
-            return CallbackReturn::ERROR;
-        }
-
-        // Get parameters
-        port_ = info_.hardware_parameters["serial_port"];
-        baud_rate_ = std::stoi(info_.hardware_parameters["baud_rate"]);
-        wheel_diameter_ = std::stod(info_.hardware_parameters["wheel_diameter"]);
-
-        // Fixed hardware specifications
-        pulses_per_rev_ = 11;  // Motor encoder PPR
-        gear_ratio_ = 87.0;    // 1:87 gear ratio
-        
-        // Calculate total counts for one wheel revolution
-        // PPR * 4 (quadrature) * gear ratio
-        counts_per_wheel_rev_ = pulses_per_rev_ * 4 * gear_ratio_;
-
-        // Initialize the storage vectors
-        hw_positions_.resize(info_.joints.size(), 0.0);
-        hw_velocities_.resize(info_.joints.size(), 0.0);
-        hw_commands_.resize(info_.joints.size(), 0.0);
-        
-        // Initialize encoder counts
-        last_encoder_counts_.resize(4, 0);
-        current_encoder_counts_.resize(4, 0);
-        last_read_time_ = std::chrono::steady_clock::now();
-
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
-                    "Initialized with port: %s, baud: %d", 
-                    port_.c_str(), baud_rate_);
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"),
-                    "Encoder configuration: PPR: %d, Gear ratio: 1:%.1f, Counts per wheel rev: %.1f",
-                    pulses_per_rev_, gear_ratio_, counts_per_wheel_rev_);
-
-        return CallbackReturn::SUCCESS;
     }
 
-    std::vector<hardware_interface::StateInterface> export_state_interfaces() override
+    hardware_interface::CallbackReturn ACSARInterface::on_init(const hardware_interface::HardwareInfo & info)
+    {
+        hardware_interface::CallbackReturn result = hardware_interface::SystemInterface::on_init(info);
+        if (result != hardware_interface::CallbackReturn::SUCCESS)
+        {
+            return result;
+        }
+        try
+        {
+            port_name_ = info_.hardware_parameters.at("serial_port");
+        }
+        catch (const std::out_of_range &e)
+        {
+            RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Port name not found in hardware parameters");
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+        try
+        {
+            std::string baud_str = info_.hardware_parameters.at("baud_rate");
+            baud_rate_ = std::stoi(baud_str);
+        }
+        catch (const std::out_of_range &e)
+        {
+            RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Baud rate not found in hardware parameters");
+            baud_rate_ = 9600;
+        }
+        catch (const std::invalid_argument &e)
+        {
+            RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Invalid baud rate value: %s", e.what());
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+
+        
+        try {
+            odom_frame_ = info_.hardware_parameters.at("odom_frame");
+        } catch (const std::out_of_range &e) {
+            odom_frame_ = "odom";
+        }
+
+        try {
+            base_frame_ = info_.hardware_parameters.at("base_frame");
+        } catch (const std::out_of_range &e) {
+            base_frame_ = "base_link";
+        }
+
+        try {
+            lidar_frame_ = info_.hardware_parameters.at("lidar_frame");
+        } catch (const std::out_of_range &e) {
+            lidar_frame_ = "lidar_link";
+        }
+
+
+        try {
+            wheel_radius_ = std::stod(info_.hardware_parameters.at("wheel_radius"));
+        } catch (const std::out_of_range &e) {
+            wheel_radius_ = 0.05; 
+        }
+
+        try {
+            wheel_separation_ = std::stod(info_.hardware_parameters.at("wheel_separation"));
+        } catch (const std::out_of_range &e) {
+            wheel_separation_ = 0.3; 
+        }
+
+        // Get LiDAR mounting position
+        try {
+            lidar_x_offset_ = std::stod(info_.hardware_parameters.at("lidar_x_offset"));
+        } catch (const std::out_of_range &e) {
+            lidar_x_offset_ = -0.15; 
+        }
+
+        try {
+            lidar_y_offset_ = std::stod(info_.hardware_parameters.at("lidar_y_offset"));
+        } catch (const std::out_of_range &e) {
+            lidar_y_offset_ = 0.0; 
+        }
+
+        try {
+            lidar_z_offset_ = std::stod(info_.hardware_parameters.at("lidar_z_offset"));
+        } catch (const std::out_of_range &e) {
+            lidar_z_offset_ = 0.37; // 
+        }
+
+        velocity_commands_.resize(info_.joints.size(), 0.0);
+        position_states_.resize(info_.joints.size(), 0.0);   
+        velocity_states_.resize(info_.joints.size(), 0.0);
+
+        last_read_time_ = rclcpp::Clock().now();
+
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "ACSARInterface initialized with port: %s, baud rate: %d", port_name_.c_str(), baud_rate_);
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+
+    std::vector<hardware_interface::StateInterface> ACSARInterface::export_state_interfaces()
     {
         std::vector<hardware_interface::StateInterface> state_interfaces;
         
-        // Get joint names from hardware info
-        for (const hardware_interface::ComponentInfo& joint : info_.joints) {
-            // Export position interface
-            state_interfaces.emplace_back(
-                hardware_interface::StateInterface(
-                    joint.name, 
-                    hardware_interface::HW_IF_POSITION,  // Use the constant
-                    &hw_positions_[state_interfaces.size() / 2]));
-                    
-            // Export velocity interface
-            state_interfaces.emplace_back(
-                hardware_interface::StateInterface(
-                    joint.name, 
-                    hardware_interface::HW_IF_VELOCITY,  // Use the constant
-                    &hw_velocities_[state_interfaces.size() / 2]));
-                    
-            RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Exported state interfaces for joint: %s", joint.name.c_str());
+        for (size_t i = 0; i < info_.joints.size(); i++)
+        {
+            state_interfaces.emplace_back(hardware_interface::StateInterface(
+                info_.joints[i].name, "position", &position_states_[i]));
+            
+            state_interfaces.emplace_back(hardware_interface::StateInterface(
+                info_.joints[i].name, "velocity", &velocity_states_[i]));         
         }
-
         return state_interfaces;
     }
 
-    std::vector<hardware_interface::CommandInterface> export_command_interfaces() override
+    std::vector<hardware_interface::CommandInterface> ACSARInterface::export_command_interfaces()
     {
         std::vector<hardware_interface::CommandInterface> command_interfaces;
         
-        // Get joint names from hardware info
-        for (const hardware_interface::ComponentInfo& joint : info_.joints) {
-            command_interfaces.emplace_back(
-                hardware_interface::CommandInterface(
-                    joint.name, 
-                    hardware_interface::HW_IF_VELOCITY,  
-                    &hw_commands_[command_interfaces.size()]));
-                    
-            RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Exported command interface for joint: %s", joint.name.c_str());
+        for (size_t i = 0; i < info_.joints.size(); i++)
+        {
+            command_interfaces.emplace_back(hardware_interface::CommandInterface(
+                info_.joints[i].name, "velocity", &velocity_commands_[i]));
         }
-
         return command_interfaces;
     }
 
-
-
-    hardware_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state) override
+    hardware_interface::CallbackReturn ACSARInterface::on_activate(const rclcpp_lifecycle::State &previous_state)
     {
-        // Open serial port
-        serial_fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY);
-        if (serial_fd_ < 0) {
-            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Failed to open serial port: %s", strerror(errno));
-            return hardware_interface::CallbackReturn::ERROR;
-        }
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Activating Robot Hardware Interface");
 
-        // Configure serial port
-        struct termios tty;
-        memset(&tty, 0, sizeof(tty));
-        if (tcgetattr(serial_fd_, &tty) != 0) {
-            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Failed to get serial attributes");
-            return hardware_interface::CallbackReturn::ERROR;
-        }
+        std::fill(velocity_commands_.begin(), velocity_commands_.end(), 0.0);
+        std::fill(position_states_.begin(), position_states_.end(), 0.0);   
+        std::fill(velocity_states_.begin(), velocity_states_.end(), 0.0);
 
-        // Set baud rate
-        cfsetospeed(&tty, B9600);
-        cfsetispeed(&tty, B9600);
+        x_ = 0.0;
+        y_ = 0.0;
+        theta_ = 0.0;
 
-        // 8N1 mode
-        tty.c_cflag &= ~PARENB;
-        tty.c_cflag &= ~CSTOPB;
-        tty.c_cflag &= ~CSIZE;
-        tty.c_cflag |= CS8;
-        
-        // No flow control
-        tty.c_cflag &= ~CRTSCTS;
-        
-        // Turn on READ & ignore control lines
-        tty.c_cflag |= CREAD | CLOCAL;
-        
-        // Raw mode
-        tty.c_lflag &= ~ICANON;
-        tty.c_lflag &= ~ECHO;
-        tty.c_lflag &= ~ECHOE;
-        tty.c_lflag &= ~ECHONL;
-        tty.c_lflag &= ~ISIG;
-        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
-        tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL);
-        tty.c_oflag &= ~OPOST;
-        tty.c_oflag &= ~ONLCR;
-        
-        // Wait for 1 byte for up to 0.1 seconds
-        tty.c_cc[VMIN] = 1;
-        tty.c_cc[VTIME] = 1;
-
-        if (tcsetattr(serial_fd_, TCSANOW, &tty) != 0) {
-            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), 
-                        "Failed to set serial attributes");
-            return hardware_interface::CallbackReturn::ERROR;
-        }
-
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Successfully activated");
-        return hardware_interface::CallbackReturn::SUCCESS;
-    }
-
-    hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state) override
-    {
-        if (serial_fd_ >= 0) {
-            close(serial_fd_);
-            serial_fd_ = -1;
-        }
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Successfully deactivated");
-        return hardware_interface::CallbackReturn::SUCCESS;
-    }
-
-
-    int Write_Serial(const unsigned char* buf, int len)
-    {
-        return ::write(serial_fd_,const_cast<unsigned char*>(buf),len);
-    }
-
-    int Read_Serial(unsigned char* buf,int len)
-    {
-        auto start = std::chrono::steady_clock::now();
-        ssize_t bytes_read = 0;
-        while(bytes_read < len)
+        try
         {
-            ssize_t res = ::read(serial_fd_,&buf[bytes_read],1);
-            if(res < 0)
+            AVR_.Open(port_name_);
+
+            switch (baud_rate_)
             {
-                RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"),"Failed to read from serial port: %s",strerror(errno));
-                return res;
+              case 9600:
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_9600);
+                break;
+              case 19200:
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_19200);
+                break;
+              case 38400:
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_38400);
+                break;
+              case 57600:
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_57600);
+                break;
+              case 115200:
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
+                break;
+              default:
+                RCLCPP_WARN(rclcpp::get_logger("ACSARInterface"), 
+                          "Unsupported baud rate: %d, using 9600 instead", baud_rate_);
+                AVR_.SetBaudRate(LibSerial::BaudRate::BAUD_9600);
+                break;
             }
-            
-            bytes_read += res;
-            auto now = std::chrono::steady_clock::now();
-            if(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() > 3000)
-            {
-                RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"),"Timeout while reading from serial port");
-                return -1;
-            }
 
-        }
-        return bytes_read;
-    }
+            AVR_.SetCharacterSize(LibSerial::CharacterSize::CHAR_SIZE_8);
+            AVR_.SetParity(LibSerial::Parity::PARITY_NONE);
+            AVR_.SetStopBits(LibSerial::StopBits::STOP_BITS_1);
+            AVR_.SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE);
 
-    /**
-     * Reads encoder data from the hardware interface.
-     * 
-     * Reads raw encoder counts from the hardware via the serial port and calculates the joint positions and velocities
-     * for all four motors. The function also handles invalid packets, calculates the time difference between reads, 
-     * and updates the internal state of the hardware interface. 
-     * 
-     * @param time The current time.
-     * @param period The time period since the last read.
-     * @return hardware_interface::return_type::OK on success, or hardware_interface::return_type::ERROR on failure.
-     */
-
-    hardware_interface::return_type read(const rclcpp::Time & time, const rclcpp::Duration & period) override
-    {
-        if (serial_fd_ < 0) {
-            RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), "Serial port not open");
-            return hardware_interface::return_type::ERROR;
-        }
-    
-        // Read encoder packet (18 bytes: 0xFF + 4 encoders * 4 bytes + 0xFE)
-        uint8_t packet[18];
-        ssize_t bytes_read = 0;
-        bool valid_packet = false;
-    
-        while (bytes_read < 18 && !valid_packet) {
-            uint8_t byte;
-            ssize_t result = ::read(serial_fd_, &byte, 1);
-            if (result > 0) {
-                if (bytes_read == 0 && byte == 0xFF) {
-                    packet[bytes_read++] = byte;
-                } else if (bytes_read > 0) {
-                    packet[bytes_read++] = byte;
-                }
-                if (bytes_read == 18) {
-                    valid_packet = (packet[0] == 0xFF && packet[17] == 0xFE);
-                }
-            } else if (result < 0) {
-                RCLCPP_ERROR(rclcpp::get_logger("SimpleHardwareInterface"), "Serial read failed: %s", strerror(errno));
-                return hardware_interface::return_type::ERROR;
-            }
-        }
-    
-        if (!valid_packet) {
-            RCLCPP_WARN(rclcpp::get_logger("SimpleHardwareInterface"), "Invalid encoder packet");
-            return hardware_interface::return_type::OK;
-        }
-    
-        // Parse 4 encoder counts
-        int32_t counts[4];
-        counts[0] = (packet[1] << 24) | (packet[2] << 16) | (packet[3] << 8) | packet[4];   // FL
-        counts[1] = (packet[5] << 24) | (packet[6] << 16) | (packet[7] << 8) | packet[8];   // BL
-        counts[2] = (packet[9] << 24) | (packet[10] << 16) | (packet[11] << 8) | packet[12]; // FR
-        counts[3] = (packet[13] << 24) | (packet[14] << 16) | (packet[15] << 8) | packet[16]; // BR
-    
-        for (size_t i = 0; i < 4; ++i) {
-            current_encoder_counts_[i] = counts[i];
-        }
-    
-        // Calculate time difference
-        auto current_time = std::chrono::steady_clock::now();
-        double dt = std::chrono::duration<double>(current_time - last_read_time_).count();
-        last_read_time_ = current_time;
-        if (dt <= 0 || dt > 1.0) {
-            dt = period.seconds();
-        }
-    
-        // Update positions and velocities for 4 joints
-        for (size_t i = 0; i < 4; ++i) {
-            // Position: θ = (2π * counts) / counts_per_wheel_rev
-            hw_positions_[i] = (2.0 * M_PI * current_encoder_counts_[i]) / counts_per_wheel_rev_;
-    
-            // Velocity: ω = (2π * Δcounts) / (counts_per_wheel_rev * Δt)
-            double count_diff = current_encoder_counts_[i] - last_encoder_counts_[i];
-            hw_velocities_[i] = (2.0 * M_PI * count_diff) / (counts_per_wheel_rev_ * dt);
-    
-            last_encoder_counts_[i] = current_encoder_counts_[i];
-        }
-    
-        // Log all 4 joints
-        RCLCPP_INFO(rclcpp::get_logger("arduino_actuator_interface"), 
-                    "FL pos: %.2f rad, vel: %.2f rad/s", hw_positions_[0], hw_velocities_[0]);
-        RCLCPP_INFO(rclcpp::get_logger("arduino_actuator_interface"), 
-                    "BL pos: %.2f rad, vel: %.2f rad/s", hw_positions_[1], hw_velocities_[1]);
-        RCLCPP_INFO(rclcpp::get_logger("arduino_actuator_interface"), 
-                    "FR pos: %.2f rad, vel: %.2f rad/s", hw_positions_[2], hw_velocities_[2]);
-        RCLCPP_INFO(rclcpp::get_logger("arduino_actuator_interface"), 
-                    "BR pos: %.2f rad, vel: %.2f rad/s", hw_positions_[3], hw_velocities_[3]);
-    
-        return hardware_interface::return_type::OK;
-    }
-
-
-    /**
-     * Writes velocity commands to the hardware interface.
-     * 
-     * Retrieves the velocity commands for all four motors, determines the direction for each motor (forward or reverse),
-     * and constructs a command string. The command string is then sent to the hardware via the serial port.
-     * The function also logs the commands for debugging purposes and throttles the data transfer to avoid overwhelming the Arduino.
-     * 
-     * @param time The current time.
-     * @param period The time period since the last write.
-     * @return hardware_interface::return_type::OK on success, or hardware_interface::return_type::ERROR on failure.
-     */
-
-    hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override
-    {
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Writing");
-
-        try {
-          // Get the velocity commands for all 4 motors
-          float rpmFront_left = static_cast<float>(hw_commands_.at(0));  // Front left
-          int dirFront_left = (rpmFront_left >= 0) ? 0 : 1;  // 0 for forward, 1 for reverse
-      
-          float rpmBack_left = static_cast<float>(hw_commands_.at(1));  // Back left
-          int dirBack_left = (rpmBack_left >= 0) ? 0 : 1;  
-      
-          float rpmFront_right = static_cast<float>(hw_commands_.at(2));  // Front right
-          int dirFront_right = (rpmFront_right >= 0) ? 0 : 1;  
-      
-          float rpmBack_right = static_cast<float>(hw_commands_.at(3));  // Back right
-          int dirBack_right = (rpmBack_right >= 0) ? 0 : 1;  
-      
-          // Create a string with the command data for all 4 motors
-          std::string data = std::to_string(rpmFront_left) + " " + std::to_string(dirFront_left) + " " +
-                             std::to_string(rpmBack_left) + " " + std::to_string(dirBack_left) + " " +
-                             std::to_string(rpmFront_right) + " " + std::to_string(dirFront_right) + " " +
-                             std::to_string(rpmBack_right) + " " + std::to_string(dirBack_right) + "\n";
-      
-          // Write the command data to the serial port
-          Write_Serial(reinterpret_cast<const unsigned char*>(data.c_str()), data.length());
-          RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Writing %s", data.c_str());
-      
-          // Throttle the data transfer to avoid overwhelming the Arduino
-          std::this_thread::sleep_for(std::chrono::milliseconds(100)); 
+            AVR_.FlushIOBuffers();
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         }
         catch (const std::exception& e) {
-          RCLCPP_FATAL(rclcpp::get_logger("SimpleHardwareInterface"), "Error: %s", e.what());
-          return hardware_interface::return_type::ERROR;
+            RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Failed to open serial port: %s", e.what());
+            return hardware_interface::CallbackReturn::FAILURE;
         }
-      
-        // Log the commands for all 4 joints for debugging purposes
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Front left joint command: %.2f, Direction: %d", 
-                    hw_commands_.at(0), (hw_commands_.at(0) >= 0) ? 0 : 1);
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Back left joint command: %.2f, Direction: %d", 
-                    hw_commands_.at(1), (hw_commands_.at(1) >= 0) ? 0 : 1);
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Front right joint command: %.2f, Direction: %d", 
-                    hw_commands_.at(2), (hw_commands_.at(2) >= 0) ? 0 : 1);
-        RCLCPP_INFO(rclcpp::get_logger("SimpleHardwareInterface"), "Back right joint command: %.2f, Direction: %d", 
-                    hw_commands_.at(3), (hw_commands_.at(3) >= 0) ? 0 : 1);
-      
-        return hardware_interface::return_type::OK;
+        
+        node_ = std::make_shared<rclcpp::Node>("acsar_hw_interface");
+        
+        odom_publisher_ = node_->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
+        
+        tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*node_);
+        
+        executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
+        executor_->add_node(node_);
+        executor_thread_ = std::thread([this]() {
+            while (rclcpp::ok()) {
+                executor_->spin_some();
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            }
+        });
+        
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Serial port opened successfully, Ready to take commands");
+        return hardware_interface::CallbackReturn::SUCCESS;
     }
 
-private:
-    std::vector<double> hw_commands_;
-    std::vector<double> hw_positions_;
-    std::vector<double> hw_velocities_;
+    hardware_interface::CallbackReturn ACSARInterface::on_deactivate(const rclcpp_lifecycle::State &previous_state)
+    {
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Deactivating Robot Hardware Interface");
+        std::fill(velocity_commands_.begin(), velocity_commands_.end(), 0.0);
+        
+        write(rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(0)));
+
+        if (AVR_.IsOpen())
+        {
+            try
+            {
+                AVR_.Close();
+            }
+            catch (const std::exception& e) {
+                RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Failed to close serial port: %s", e.what());
+                return hardware_interface::CallbackReturn::ERROR;
+            }
+        }
+        
+       
+        if (executor_thread_.joinable()) {
+            executor_thread_.join();
+        }
+        
+        executor_->remove_node(node_);
+        odom_publisher_.reset();
+        tf_broadcaster_.reset();
+        node_.reset();
+
+       RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Serial port closed successfully, Hardware Stopped");
+       return hardware_interface::CallbackReturn::SUCCESS;
+    }
+
+    hardware_interface::return_type ACSARInterface::read(const rclcpp::Time &time, const rclcpp::Duration &period)
+{
+    if (AVR_.IsDataAvailable())
+    {
+        try
+        {
+            auto dt = (rclcpp::Clock().now() - last_read_time_).seconds();
+            std::string message;
+            AVR_.ReadLine(message);
+
+            // Clean up message by removing carriage returns and newlines
+            message.erase(std::remove(message.begin(), message.end(), '\r'), message.end());
+            message.erase(std::remove(message.begin(), message.end(), '\n'), message.end());
+
+            if (message.empty())
+            {
+                return hardware_interface::return_type::OK;
+            }
+
+            if (!message.empty() && message.back() == ',') {
+                message.pop_back();
+            }
+
+            RCLCPP_DEBUG(rclcpp::get_logger("ACSARInterface"), "Received message: %s", message.c_str());
+
+            std::stringstream ss(message);
+            std::string part;
+
+            while (std::getline(ss, part, ','))
+            {
+                if (part.length() < 3)
+                {
+                    RCLCPP_WARN(rclcpp::get_logger("ACSARInterface"), "Skipping too short part: %s", part.c_str());
+                    continue;
+                }
+
+                char motor_id = part.at(0);
+                char direction = part.at(1);
+
+                int sign = (direction == 'p') ? 1 : -1;
+
+                try {
+                   
+                    std::string value_str = part.substr(2);
+                   
+                    value_str.erase(0, value_str.find_first_not_of(" \t"));
+                    value_str.erase(value_str.find_last_not_of(" \t") + 1);
+                    
+                    if (value_str.empty()) {
+                        RCLCPP_WARN(rclcpp::get_logger("ACSARInterface"), "Empty value for motor %c", motor_id);
+                        continue;
+                    }
+                    
+                    double velocity = sign * std::stod(value_str);
+
+                    switch (motor_id)
+                    {
+                        case 'a': // front right wheel
+                            if (0 < info_.joints.size())
+                            {
+                                velocity_states_[0] = velocity;
+                                position_states_[0] += velocity * dt;  
+                            }
+                            break;
+
+                        case 'b': // Front left wheel
+                            if (1 < info_.joints.size())
+                            {
+                                velocity_states_[1] = velocity;
+                                position_states_[1] += velocity_states_[1] * dt;
+                            }
+                            break;
+                            
+                        case 'c':  // Rear left wheel
+                            if (2 < info_.joints.size())
+                            {
+                                velocity_states_[2] = velocity;
+                                position_states_[2] += velocity_states_[2] * dt;
+                            }
+                            break;
+                            
+                        case 'd':  // Rear right wheel
+                            if (3 < info_.joints.size())
+                            {
+                                velocity_states_[3] = velocity;
+                                position_states_[3] += velocity_states_[3] * dt;
+                            }
+                            break;
+
+                        default:
+                            RCLCPP_WARN(rclcpp::get_logger("ACSARInterface"), "Invalid motor ID: %c", motor_id);
+                            break;
+                    }
+                } catch (const std::exception& e) {
+                    RCLCPP_WARN(rclcpp::get_logger("ACSARInterface"), 
+                        "Failed to parse velocity for motor %c: %s (value: %s)", 
+                        motor_id, e.what(), part.substr(2).c_str());
+                    continue; 
+                }
+            }
+
+            last_read_time_ = rclcpp::Clock().now();
+        }
+        catch (const std::exception& e) {
+            RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), 
+                "Failed to read from serial port: %s", e.what());
+            // Don't return error here - try to continue operation
+        }
+    }
     
-    std::string port_;
-    int serial_fd_ = -1;
-    int baud_rate_;
+    // Calculate and publish odometry based on wheel velocities
+    publishOdometry(time, period);
+    
+    // Reduce the log level to DEBUG for routine operations
+    RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Velocity states: [%f, %f, %f, %f]",
+        velocity_states_[0], velocity_states_[1], velocity_states_[2], velocity_states_[3]);
+    RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Position states: [%f, %f, %f, %f]",
+        position_states_[0], position_states_[1], position_states_[2], position_states_[3]);
+        
+    return hardware_interface::return_type::OK;
+}
 
-    // Encoder-related members
-    std::vector<int32_t> current_encoder_counts_;
-    std::vector<int32_t> last_encoder_counts_;
-    std::chrono::steady_clock::time_point last_read_time_;
-    int pulses_per_rev_;          // Raw encoder PPR (11)
-    double gear_ratio_;           // Gear reduction ratio (87:1)
-    double counts_per_wheel_rev_; // Total encoder counts per wheel revolution
-    double wheel_diameter_;
-};
 
-} // namespace robot_control
+ hardware_interface::return_type ACSARInterface::write(const rclcpp::Time &time, const rclcpp::Duration &period)
+{
+    std::stringstream command_stream;
 
-#include "pluginlib/class_list_macros.hpp"
-PLUGINLIB_EXPORT_CLASS(
-    robot_control::SimpleHardwareInterface,
-    hardware_interface::SystemInterface)
+    // Format is: a[p/n]XX.XX,b[p/n]XX.XX,c[p/n]XX.XX,d[p/n]XX.XX
+    const std::array<char, 4> motor_ids = {'a', 'b', 'c', 'd'};
 
+    for (size_t i = 0; i < info_.joints.size() && i < 4; i++)
+    {
+        char direction = (velocity_commands_[i] >= 0) ? 'p' : 'n';
+        command_stream << motor_ids[i] << direction;
+        command_stream << std::fixed << std::setprecision(2);
+
+        if (std::abs(velocity_commands_[i]) < 10.0)
+        {
+            command_stream << "0";
+        }
+
+        command_stream << std::abs(velocity_commands_[i]);
+        command_stream << ",";
+    }
+
+    try
+    {
+        std::string message = command_stream.str();
+        message += "\r\n";
+        RCLCPP_DEBUG(rclcpp::get_logger("ACSARInterface"), "Sending: %s", message.c_str());
+        AVR_.Write(message);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("ACSARInterface"), "Error writing to serial port: %s", e.what());
+        return hardware_interface::return_type::ERROR;
+    }
+
+    RCLCPP_INFO(rclcpp::get_logger("hardware_interface"), "Velocity commands: [%f, %f, %f, %f]",
+        velocity_commands_[0], velocity_commands_[1], velocity_commands_[2], velocity_commands_[3]);
+
+    return hardware_interface::return_type::OK;
+}
+   
+
+ 
+    void ACSARInterface::publishOdometry(const rclcpp::Time &time, const rclcpp::Duration &period)
+    {
+        // Calculate linear and angular velocities using differential drive kinematics
+        // For a 4-wheeled robot (differential drive with independent wheels)
+        double front_right_velocity = velocity_states_[0] * wheel_radius_;
+        double front_left_velocity = velocity_states_[1] * wheel_radius_;
+        double rear_left_velocity = velocity_states_[2] * wheel_radius_;
+        double rear_right_velocity = velocity_states_[3] * wheel_radius_;
+        
+        // Calculate overall left and right side velocities
+        double left_wheel_velocity = (front_left_velocity + rear_left_velocity) / 2.0;
+        double right_wheel_velocity = (front_right_velocity + rear_right_velocity) / 2.0;
+        
+        double linear_vel_x = (left_wheel_velocity + right_wheel_velocity) / 2.0;
+        double angular_vel_z = (right_wheel_velocity - left_wheel_velocity) / wheel_separation_;
+        
+        // Calculate position change
+        double dt = period.seconds();
+        double delta_x = linear_vel_x * std::cos(theta_) * dt;
+        double delta_y = linear_vel_x * std::sin(theta_) * dt;
+        double delta_theta = angular_vel_z * dt;
+        
+        // Update position
+        x_ += delta_x;
+        y_ += delta_y;
+        theta_ += delta_theta;
+        
+        // Normalize theta
+        while (theta_ > M_PI) theta_ -= 2 * M_PI;
+        while (theta_ < -M_PI) theta_ += 2 * M_PI;
+        
+        tf2::Quaternion q;
+        q.setRPY(0, 0, theta_);
+        
+        // Publish transform from odom to base_link
+        geometry_msgs::msg::TransformStamped transform_stamped;
+        transform_stamped.header.stamp = time;
+        transform_stamped.header.frame_id = odom_frame_;
+        transform_stamped.child_frame_id = base_frame_;
+        transform_stamped.transform.translation.x = x_;
+        transform_stamped.transform.translation.y = y_;
+        transform_stamped.transform.translation.z = 0.0;
+        transform_stamped.transform.rotation.x = q.x();
+        transform_stamped.transform.rotation.y = q.y();
+        transform_stamped.transform.rotation.z = q.z();
+        transform_stamped.transform.rotation.w = q.w();
+        
+        tf_broadcaster_->sendTransform(transform_stamped);
+        
+        // Publish odometry message
+        nav_msgs::msg::Odometry odom_msg;
+        odom_msg.header.stamp = time;
+        odom_msg.header.frame_id = odom_frame_;
+        odom_msg.child_frame_id = base_frame_;
+        
+        // Set position
+        odom_msg.pose.pose.position.x = x_;
+        odom_msg.pose.pose.position.y = y_;
+        odom_msg.pose.pose.position.z = 0.0;
+        odom_msg.pose.pose.orientation.x = q.x();
+        odom_msg.pose.pose.orientation.y = q.y();
+        odom_msg.pose.pose.orientation.z = q.z();
+        odom_msg.pose.pose.orientation.w = q.w();
+        
+        // Set velocity
+        odom_msg.twist.twist.linear.x = linear_vel_x;
+        odom_msg.twist.twist.linear.y = 0.0;
+        odom_msg.twist.twist.angular.z = angular_vel_z;
+        
+        // Set covariance
+        // position uncertainty
+        odom_msg.pose.covariance[0] = 0.01; 
+        odom_msg.pose.covariance[7] = 0.01;  
+        odom_msg.pose.covariance[35] = 0.01; 
+        
+        //velocity uncertainty
+        odom_msg.twist.covariance[0] = 0.01;  
+        odom_msg.twist.covariance[35] = 0.01; 
+        
+       
+        odom_publisher_->publish(odom_msg);
+        
+        
+        geometry_msgs::msg::TransformStamped lidar_transform;
+        lidar_transform.header.stamp = time;
+        lidar_transform.header.frame_id = base_frame_;
+        lidar_transform.child_frame_id = lidar_frame_;
+        
+        lidar_transform.transform.translation.x = lidar_x_offset_;
+        lidar_transform.transform.translation.y = lidar_y_offset_;
+        lidar_transform.transform.translation.z = lidar_z_offset_;
+        
+        lidar_transform.transform.rotation.x = 0.0;
+        lidar_transform.transform.rotation.y = 0.0;
+        lidar_transform.transform.rotation.z = 0.0;
+        lidar_transform.transform.rotation.w = 1.0;
+        
+        tf_broadcaster_->sendTransform(lidar_transform);
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "FL: %.2f FR: %.2f RL: %.2f RR: %.2f", 
+            front_left_velocity, front_right_velocity, rear_left_velocity, rear_right_velocity);
+        RCLCPP_INFO(rclcpp::get_logger("ACSARInterface"), "Left avg: %.2f, Right avg: %.2f", 
+            left_wheel_velocity, right_wheel_velocity);
+
+    }
+}
+
+PLUGINLIB_EXPORT_CLASS(ACSAR_firmware::ACSARInterface, hardware_interface::SystemInterface)

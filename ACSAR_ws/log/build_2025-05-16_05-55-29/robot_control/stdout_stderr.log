@@ -1,0 +1,81 @@
+[35m[1mConsolidate compiler generated dependencies of target robot_control[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o[0m
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In destructor ‘[01m[Kvirtual ACSAR_firmware::ACSARInterface::~ACSARInterface()[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:22:52:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+   22 |             catch (const LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:22:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+   22 |             catch [34m[K([m[Kconst LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                   [34m[K~[m[K                                [01;31m[K^[m[K
+      |                                                    [32m[K)[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:22:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:22:54:[m[K [01;31m[Kerror: [m[K‘[01m[Ke[m[K’ was not declared in this scope
+   22 |             catch (const LibSerial::SerialPortError& [01;31m[Ke[m[K)
+      |                                                      [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn ACSAR_firmware::ACSARInterface::on_activate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:142:48:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  142 |         catch (const LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                                                [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:142:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  142 |         catch [34m[K([m[Kconst LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |               [34m[K~[m[K                                [01;31m[K^[m[K
+      |                                                [32m[K)[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:142:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:142:50:[m[K [01;31m[Kerror: [m[K‘[01m[Ke[m[K’ was not declared in this scope
+  142 |         catch (const LibSerial::SerialPortError& [01;31m[Ke[m[K)
+      |                                                  [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:98:99:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   98 | terface::on_activate([01;35m[Kconst rclcpp_lifecycle::State &previous_state[m[K)
+      |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn ACSAR_firmware::ACSARInterface::on_deactivate(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:166:52:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  166 |             catch (const LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:166:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  166 |             catch [34m[K([m[Kconst LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                   [34m[K~[m[K                                [01;31m[K^[m[K
+      |                                                    [32m[K)[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:166:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:166:54:[m[K [01;31m[Kerror: [m[K‘[01m[Ke[m[K’ was not declared in this scope
+  166 |             catch (const LibSerial::SerialPortError& [01;31m[Ke[m[K)
+      |                                                      [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:152:101:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  152 | rface::on_deactivate([01;35m[Kconst rclcpp_lifecycle::State &previous_state[m[K)
+      |                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type ACSAR_firmware::ACSARInterface::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:256:52:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  256 |             catch (const LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                                                    [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:256:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  256 |             catch [34m[K([m[Kconst LibSerial::SerialPortError[01;31m[K&[m[K e)
+      |                   [34m[K~[m[K                                [01;31m[K^[m[K
+      |                                                    [32m[K)[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:256:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:256:54:[m[K [01;31m[Kerror: [m[K‘[01m[Ke[m[K’ was not declared in this scope
+  256 |             catch (const LibSerial::SerialPortError& [01;31m[Ke[m[K)
+      |                                                      [01;31m[K^[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:261:13:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kcatch[m[K’
+  261 |             [01;31m[Kcatch[m[K (const std::exception& e)
+      |             [01;31m[K^~~~~[m[K
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:177:78:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  177 | eturn_type ACSARInterface::read([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &period)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:177:108:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  177 | :read(const rclcpp::Time &time, [01;35m[Kconst rclcpp::Duration &period[m[K)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type ACSAR_firmware::ACSARInterface::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:270:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  270 | turn_type ACSARInterface::write([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &period)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+
+[01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:270:109:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  270 | write(const rclcpp::Time &time, [01;35m[Kconst rclcpp::Duration &period[m[K)
+      |                                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/robot_control.dir/build.make:76: CMakeFiles/robot_control.dir/src/Hardware_Interface.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/robot_control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

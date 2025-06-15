@@ -1,0 +1,23 @@
+-- Install configuration: ""
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/lib/robot_nav/Autonomous_navigation.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/lib/robot_nav/Speach_recorder.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/launch
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/launch/nodes.launch.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/launch/nav.launch.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/config
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/config/nav2_params.yaml
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/ament_index/resource_index/package_run_dependencies/robot_nav
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/ament_index/resource_index/parent_prefix_path/robot_nav
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/environment/ament_prefix_path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/environment/ament_prefix_path.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/environment/path.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/environment/path.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/local_setup.bash
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/local_setup.sh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/local_setup.zsh
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/local_setup.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/package.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/ament_index/resource_index/packages/robot_nav
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/cmake/robot_navConfig.cmake
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/cmake/robot_navConfig-version.cmake
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/install/robot_nav/share/robot_nav/package.xml

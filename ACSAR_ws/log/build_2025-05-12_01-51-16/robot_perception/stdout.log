@@ -1,0 +1,23 @@
+-- Install configuration: ""
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/robot_perception/perception.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/robot_perception/Emotion_Recognition.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/config
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/config/detector_params.yaml
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/launch
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/launch/Perception_system_sim.launch.py
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/launch/Perception_system_real.launch.py
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/ament_index/resource_index/package_run_dependencies/robot_perception
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/ament_index/resource_index/parent_prefix_path/robot_perception
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/environment/path.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/environment/path.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/local_setup.bash
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/local_setup.sh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/local_setup.zsh
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/local_setup.dsv
+-- Installing: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.dsv
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/ament_index/resource_index/packages/robot_perception
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/cmake/robot_perceptionConfig-version.cmake
+-- Up-to-date: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.xml

@@ -1,0 +1,5 @@
+[31mCMake Error at CMakeLists.txt:43 (install):
+  install TARGETS given target "robot_control" which does not exist.
+
+[0m
+gmake: *** [Makefile:284: cmake_check_build_system] Error 1

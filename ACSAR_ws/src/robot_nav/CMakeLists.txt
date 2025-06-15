@@ -26,13 +26,14 @@ install(PROGRAMS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+
 install(PROGRAMS
-  scripts/simple_nav.py
+  scripts/Speach_recorder.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
 install(PROGRAMS
-  scripts/Speach_recorder.py
+  scripts/test_speech.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -1,0 +1,55 @@
+[0.027s] Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[0.051s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.173s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.202s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.204s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.209s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.219s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.231s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.261s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.263s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.361s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.408s] -- Found rclpy: 3.3.15 (/opt/ros/humble/share/rclpy/cmake)
+[0.409s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.437s] -- Found hardware_interface: 2.46.0 (/opt/ros/humble/share/hardware_interface/cmake)
+[0.545s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.612s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.612s] -- Configured cppcheck include dirs: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include;$<BUILD_INTERFACE:/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/include>
+[0.612s] -- Configured cppcheck exclude dirs and/or files: 
+[0.612s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.613s] -- Added test 'lint_cmake' to check CMake code style
+[0.613s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.614s] -- Added test 'uncrustify' to check C / C++ code style
+[0.614s] -- Configured uncrustify additional arguments: 
+[0.614s] -- Added test 'xmllint' to check XML markup files
+[0.616s] -- Configuring done
+[0.635s] -- Generating done
+[0.640s] -- Build files have been written to: /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control
+[0.669s] [ 50%] [32mBuilding CXX object CMakeFiles/Hardware_Interface_node.dir/src/Hardware_Interface.cpp.o[0m
+[2.855s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_activate(const rclcpp_lifecycle::State&)[m[K’:
+[2.855s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:107:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.855s]   107 |     hardware_interface::CallbackReturn on_activate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+[2.855s]       |                                                    [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[2.856s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn robot_control::SimpleHardwareInterface::on_deactivate(const rclcpp_lifecycle::State&)[m[K’:
+[2.856s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:167:86:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kprevious_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.856s]   167 |     hardware_interface::CallbackReturn on_deactivate([01;35m[Kconst rclcpp_lifecycle::State & previous_state[m[K) override
+[2.856s]       |                                                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[2.856s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[2.856s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:177:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.856s]   177 |     hardware_interface::return_type read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+[2.856s]       |                                          [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[2.857s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type robot_control::SimpleHardwareInterface::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[2.857s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:189:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.857s]   189 |     hardware_interface::return_type write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period) override
+[2.857s]       |                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[2.857s] [01m[K/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control/src/Hardware_Interface.cpp:189:95:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.857s]   189 |     hardware_interface::return_type write(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K) override
+[2.858s]       |                                                                      [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[3.908s] [100%] [32m[1mLinking CXX executable Hardware_Interface_node[0m
+[4.043s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[4.043s] (.text+0x1b): undefined reference to `main'
+[4.052s] collect2: error: ld returned 1 exit status
+[4.053s] gmake[2]: *** [CMakeFiles/Hardware_Interface_node.dir/build.make:290: Hardware_Interface_node] Error 1
+[4.053s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Hardware_Interface_node.dir/all] Error 2
+[4.053s] gmake: *** [Makefile:146: all] Error 2
+[4.055s] Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12

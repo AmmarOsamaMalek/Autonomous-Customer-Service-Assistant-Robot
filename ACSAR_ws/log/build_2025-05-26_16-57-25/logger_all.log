@@ -1,0 +1,614 @@
+[0.131s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.131s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x785e2c04ed40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x785e2c04e350>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x785e2c04e350>>, mixin_verb=('build',))
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.334s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['ignore', 'ignore_ament_install']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'ignore'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'ignore_ament_install'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['colcon_pkg']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'colcon_pkg'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['colcon_meta']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'colcon_meta'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['ros']
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'ros'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['cmake', 'python']
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'cmake'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'python'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extensions ['python_setup_py']
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(customer_recordings) by extension 'python_setup_py'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.352s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['ignore', 'ignore_ament_install']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ignore'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ignore_ament_install'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['colcon_pkg']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'colcon_pkg'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['colcon_meta']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'colcon_meta'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['ros']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ros'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['cmake', 'python']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'cmake'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'python'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['python_setup_py']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'python_setup_py'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['ignore', 'ignore_ament_install']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'ignore'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'ignore_ament_install'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['colcon_pkg']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'colcon_pkg'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['colcon_meta']
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'colcon_meta'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['ros']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'ros'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['cmake', 'python']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'cmake'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'python'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extensions ['python_setup_py']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules) by extension 'python_setup_py'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['ignore', 'ignore_ament_install']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'ignore'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'ignore_ament_install'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['colcon_pkg']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'colcon_pkg'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['colcon_meta']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'colcon_meta'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['ros']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'ros'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['cmake', 'python']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'cmake'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'python'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extensions ['python_setup_py']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws) by extension 'python_setup_py'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['ignore', 'ignore_ament_install']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'ignore'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'ignore_ament_install'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['colcon_pkg']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'colcon_pkg'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['colcon_meta']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'colcon_meta'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['ros']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'ros'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['cmake', 'python']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'cmake'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'python'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extensions ['python_setup_py']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(node_modules/ws/lib) by extension 'python_setup_py'
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.355s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['ignore', 'ignore_ament_install']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ignore'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ignore_ament_install'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['colcon_pkg']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'colcon_pkg'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['colcon_meta']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'colcon_meta'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extensions ['ros']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_control) by extension 'ros'
+[0.361s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_control' with type 'ros.ament_cmake' and name 'robot_control'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extensions ['ignore', 'ignore_ament_install']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extension 'ignore'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extension 'ignore_ament_install'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extensions ['colcon_pkg']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extension 'colcon_pkg'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extensions ['colcon_meta']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extension 'colcon_meta'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extensions ['ros']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_model) by extension 'ros'
+[0.362s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_model' with type 'ros.ament_cmake' and name 'robot_model'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extension 'ignore'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extension 'ignore_ament_install'
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extensions ['colcon_pkg']
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extension 'colcon_pkg'
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extensions ['colcon_meta']
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extension 'colcon_meta'
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extensions ['ros']
+[0.363s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_nav) by extension 'ros'
+[0.365s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_nav' with type 'ros.ament_cmake' and name 'robot_nav'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ignore'
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ignore_ament_install'
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['colcon_pkg']
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'colcon_pkg'
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['colcon_meta']
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'colcon_meta'
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extensions ['ros']
+[0.366s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_perception) by extension 'ros'
+[0.368s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_perception' with type 'ros.ament_cmake' and name 'robot_perception'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extension 'ignore'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extension 'ignore_ament_install'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extensions ['colcon_pkg']
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extension 'colcon_pkg'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extensions ['colcon_meta']
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extension 'colcon_meta'
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extensions ['ros']
+[0.368s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros2) by extension 'ros'
+[0.369s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rplidar_ros2' with type 'ros.ament_cmake' and name 'rplidar_ros'
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extensions ['ignore', 'ignore_ament_install']
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extension 'ignore'
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extension 'ignore_ament_install'
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extensions ['colcon_pkg']
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extension 'colcon_pkg'
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extensions ['colcon_meta']
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extension 'colcon_meta'
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extensions ['ros']
+[0.369s] Level 1:colcon.colcon_core.package_identification:_identify(src/service_robot_localization) by extension 'ros'
+[0.370s] DEBUG:colcon.colcon_core.package_identification:Package 'src/service_robot_localization' with type 'ros.ament_cmake' and name 'service_robot_localization'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['ignore', 'ignore_ament_install']
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'ignore'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'ignore_ament_install'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['colcon_pkg']
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'colcon_pkg'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['colcon_meta']
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'colcon_meta'
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['ros']
+[0.370s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'ros'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['cmake', 'python']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'cmake'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'python'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extensions ['python_setup_py']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us) by extension 'python_setup_py'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['ignore', 'ignore_ament_install']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'ignore'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'ignore_ament_install'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['colcon_pkg']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'colcon_pkg'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['colcon_meta']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'colcon_meta'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['ros']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'ros'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['cmake', 'python']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'cmake'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'python'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extensions ['python_setup_py']
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/am) by extension 'python_setup_py'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['ignore', 'ignore_ament_install']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'ignore'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'ignore_ament_install'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['colcon_pkg']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'colcon_pkg'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['colcon_meta']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'colcon_meta'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['ros']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'ros'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['cmake', 'python']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'cmake'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'python'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extensions ['python_setup_py']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/conf) by extension 'python_setup_py'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['ignore', 'ignore_ament_install']
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'ignore'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'ignore_ament_install'
+[0.372s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['colcon_pkg']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'colcon_pkg'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['colcon_meta']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'colcon_meta'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['ros']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'ros'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['cmake', 'python']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'cmake'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'python'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extensions ['python_setup_py']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph) by extension 'python_setup_py'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['ignore', 'ignore_ament_install']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'ignore'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'ignore_ament_install'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['colcon_pkg']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'colcon_pkg'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['colcon_meta']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'colcon_meta'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['ros']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'ros'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['cmake', 'python']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'cmake'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'python'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extensions ['python_setup_py']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/graph/phones) by extension 'python_setup_py'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['ignore', 'ignore_ament_install']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'ignore_ament_install'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['colcon_pkg']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'colcon_pkg'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['colcon_meta']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'colcon_meta'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['ros']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'ros'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['cmake', 'python']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'cmake'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'python'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extensions ['python_setup_py']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(vosk-model-small-en-us/ivector) by extension 'python_setup_py'
+[0.374s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.374s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.374s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.375s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.375s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.398s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/ammar/Robotics/Graduation_Project/ACSAR_ws/install
+[0.399s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 351 installed packages in /opt/ros/humble
+[0.401s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.441s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_target' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.442s] DEBUG:colcon.colcon_core.verb:Building package 'robot_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control', 'symlink_install': False, 'test_result_base': None}
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_target' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_clean_cache' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_clean_first' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'cmake_force_configure' from command line to 'False'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'ament_cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'catkin_cmake_args' from command line to 'None'
+[0.442s] Level 5:colcon.colcon_core.verb:set package 'robot_model' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.442s] DEBUG:colcon.colcon_core.verb:Building package 'robot_model' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model', 'symlink_install': False, 'test_result_base': None}
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_args' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_target' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_clean_cache' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_clean_first' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'cmake_force_configure' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'ament_cmake_args' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'catkin_cmake_args' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_nav' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.443s] DEBUG:colcon.colcon_core.verb:Building package 'robot_nav' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_nav', 'symlink_install': False, 'test_result_base': None}
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_args' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_target' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.443s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'robot_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.444s] DEBUG:colcon.colcon_core.verb:Building package 'robot_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_perception', 'symlink_install': False, 'test_result_base': None}
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_args' from command line to 'None'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target' from command line to 'None'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.444s] DEBUG:colcon.colcon_core.verb:Building package 'rplidar_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/rplidar_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.444s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_args' from command line to 'None'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_target' from command line to 'None'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_clean_cache' from command line to 'False'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_clean_first' from command line to 'False'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'cmake_force_configure' from command line to 'False'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'ament_cmake_args' from command line to 'None'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'catkin_cmake_args' from command line to 'None'
+[0.445s] Level 5:colcon.colcon_core.verb:set package 'service_robot_localization' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.445s] DEBUG:colcon.colcon_core.verb:Building package 'service_robot_localization' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization', 'merge_install': False, 'path': '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/service_robot_localization', 'symlink_install': False, 'test_result_base': None}
+[0.445s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.446s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.446s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control' with build type 'ament_cmake'
+[0.446s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_control'
+[0.449s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.449s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.449s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.453s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model' with build type 'ament_cmake'
+[0.453s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_model'
+[0.453s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.453s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.456s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_nav' with build type 'ament_cmake'
+[0.456s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_nav'
+[0.456s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.456s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.459s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_perception' with build type 'ament_cmake'
+[0.460s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/robot_perception'
+[0.460s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.460s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.463s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/rplidar_ros2' with build type 'ament_cmake'
+[0.464s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/rplidar_ros2'
+[0.464s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.464s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.467s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/service_robot_localization' with build type 'ament_cmake'
+[0.467s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/src/service_robot_localization'
+[0.467s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.467s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.476s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[0.478s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model -- -j12 -l12
+[0.481s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav -- -j12 -l12
+[0.483s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception -- -j12 -l12
+[0.491s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros -- -j12 -l12
+[0.500s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization -- -j12 -l12
+[0.541s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model -- -j12 -l12
+[0.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model
+[0.551s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception -- -j12 -l12
+[0.553s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception
+[0.554s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav -- -j12 -l12
+[0.556s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav
+[0.561s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_model)
+[0.562s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_model
+[0.569s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model' for CMake module files
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model' for CMake config files
+[0.570s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_model', 'cmake_prefix_path')
+[0.570s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.ps1'
+[0.571s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.dsv'
+[0.572s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.sh'
+[0.573s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/bin'
+[0.573s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/lib/pkgconfig/robot_model.pc'
+[0.573s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/lib/python3.10/site-packages'
+[0.573s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/bin'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.ps1'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.dsv'
+[0.575s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.sh'
+[0.576s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.bash'
+[0.577s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.zsh'
+[0.578s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/colcon-core/packages/robot_model)
+[0.578s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_model)
+[0.578s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model' for CMake module files
+[0.579s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model' for CMake config files
+[0.579s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_model', 'cmake_prefix_path')
+[0.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.ps1'
+[0.580s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.dsv'
+[0.580s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/hook/cmake_prefix_path.sh'
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/bin'
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/lib/pkgconfig/robot_model.pc'
+[0.581s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/lib/python3.10/site-packages'
+[0.581s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/bin'
+[0.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.ps1'
+[0.582s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.dsv'
+[0.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.sh'
+[0.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.bash'
+[0.584s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/robot_model/package.zsh'
+[0.584s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_model/share/colcon-core/packages/robot_model)
+[0.586s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_perception)
+[0.586s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception' for CMake module files
+[0.587s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_perception
+[0.587s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception' for CMake config files
+[0.587s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_perception', 'cmake_prefix_path')
+[0.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.ps1'
+[0.588s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.dsv'
+[0.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.sh'
+[0.589s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib'
+[0.589s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/bin'
+[0.589s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/pkgconfig/robot_perception.pc'
+[0.589s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/python3.10/site-packages'
+[0.590s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/bin'
+[0.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.ps1'
+[0.590s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.dsv'
+[0.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.sh'
+[0.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.bash'
+[0.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.zsh'
+[0.592s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/colcon-core/packages/robot_perception)
+[0.592s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_perception)
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception' for CMake module files
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception' for CMake config files
+[0.593s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_perception', 'cmake_prefix_path')
+[0.593s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.ps1'
+[0.594s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.dsv'
+[0.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/hook/cmake_prefix_path.sh'
+[0.595s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib'
+[0.595s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/bin'
+[0.595s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/pkgconfig/robot_perception.pc'
+[0.595s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/lib/python3.10/site-packages'
+[0.595s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/bin'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.ps1'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.dsv'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.sh'
+[0.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.bash'
+[0.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/robot_perception/package.zsh'
+[0.598s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_perception/share/colcon-core/packages/robot_perception)
+[0.598s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_nav)
+[0.598s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav' for CMake module files
+[0.599s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_nav
+[0.600s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav' for CMake config files
+[0.600s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_nav', 'cmake_prefix_path')
+[0.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.ps1'
+[0.600s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.dsv'
+[0.601s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.sh'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/bin'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/pkgconfig/robot_nav.pc'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/python3.10/site-packages'
+[0.602s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/bin'
+[0.602s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.ps1'
+[0.602s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.dsv'
+[0.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.sh'
+[0.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.bash'
+[0.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.zsh'
+[0.604s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/colcon-core/packages/robot_nav)
+[0.604s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_nav)
+[0.605s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav' for CMake module files
+[0.605s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav' for CMake config files
+[0.605s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_nav', 'cmake_prefix_path')
+[0.606s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.ps1'
+[0.606s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.dsv'
+[0.606s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/hook/cmake_prefix_path.sh'
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib'
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/bin'
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/pkgconfig/robot_nav.pc'
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/lib/python3.10/site-packages'
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/bin'
+[0.608s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.ps1'
+[0.608s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.dsv'
+[0.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.sh'
+[0.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.bash'
+[0.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/robot_nav/package.zsh'
+[0.610s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_nav/share/colcon-core/packages/robot_nav)
+[0.611s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization -- -j12 -l12
+[0.613s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization
+[0.614s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros -- -j12 -l12
+[0.616s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros
+[0.623s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(service_robot_localization)
+[0.623s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization' for CMake module files
+[0.624s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization' for CMake config files
+[0.625s] Level 1:colcon.colcon_core.shell:create_environment_hook('service_robot_localization', 'cmake_prefix_path')
+[0.625s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.ps1'
+[0.626s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.dsv'
+[0.626s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.sh'
+[0.627s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib'
+[0.628s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/bin'
+[0.628s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib/pkgconfig/service_robot_localization.pc'
+[0.628s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib/python3.10/site-packages'
+[0.628s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/bin'
+[0.628s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.ps1'
+[0.629s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/service_robot_localization
+[0.629s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.dsv'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.sh'
+[0.631s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.bash'
+[0.631s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.zsh'
+[0.632s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/colcon-core/packages/service_robot_localization)
+[0.633s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(service_robot_localization)
+[0.633s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization' for CMake module files
+[0.634s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization' for CMake config files
+[0.634s] Level 1:colcon.colcon_core.shell:create_environment_hook('service_robot_localization', 'cmake_prefix_path')
+[0.635s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.ps1'
+[0.635s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.dsv'
+[0.636s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/hook/cmake_prefix_path.sh'
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib'
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/bin'
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib/pkgconfig/service_robot_localization.pc'
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/lib/python3.10/site-packages'
+[0.637s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/bin'
+[0.637s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.ps1'
+[0.637s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.dsv'
+[0.638s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.sh'
+[0.638s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.bash'
+[0.639s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/service_robot_localization/package.zsh'
+[0.639s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/service_robot_localization/share/colcon-core/packages/service_robot_localization)
+[0.640s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rplidar_ros)
+[0.640s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros' for CMake module files
+[0.641s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/rplidar_ros
+[0.641s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros' for CMake config files
+[0.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'cmake_prefix_path')
+[0.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.ps1'
+[0.642s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.dsv'
+[0.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.sh'
+[0.643s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib'
+[0.643s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'ld_library_path_lib')
+[0.643s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.ps1'
+[0.643s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.dsv'
+[0.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.sh'
+[0.644s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/bin'
+[0.644s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib/pkgconfig/rplidar_ros.pc'
+[0.644s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib/python3.10/site-packages'
+[0.644s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/bin'
+[0.645s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.ps1'
+[0.645s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.dsv'
+[0.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.sh'
+[0.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.bash'
+[0.647s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.zsh'
+[0.647s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/colcon-core/packages/rplidar_ros)
+[0.647s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rplidar_ros)
+[0.648s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros' for CMake module files
+[0.648s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros' for CMake config files
+[0.648s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'cmake_prefix_path')
+[0.648s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.ps1'
+[0.649s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.dsv'
+[0.649s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.sh'
+[0.650s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib'
+[0.650s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'ld_library_path_lib')
+[0.650s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.ps1'
+[0.650s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.dsv'
+[0.650s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.sh'
+[0.651s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/bin'
+[0.651s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib/pkgconfig/rplidar_ros.pc'
+[0.651s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/lib/python3.10/site-packages'
+[0.651s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/bin'
+[0.652s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.ps1'
+[0.652s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.dsv'
+[0.652s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.sh'
+[0.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.bash'
+[0.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/rplidar_ros/package.zsh'
+[0.654s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/rplidar_ros/share/colcon-core/packages/rplidar_ros)
+[4.089s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ammar/Robotics/Graduation_Project/ACSAR_ws/build/robot_control -- -j12 -l12
+[4.090s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_control)
+[4.090s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control' for CMake module files
+[4.091s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control' for CMake config files
+[4.091s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_control', 'cmake_prefix_path')
+[4.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/cmake_prefix_path.ps1'
+[4.092s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/cmake_prefix_path.dsv'
+[4.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/cmake_prefix_path.sh'
+[4.092s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib'
+[4.092s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_control', 'ld_library_path_lib')
+[4.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/ld_library_path_lib.ps1'
+[4.093s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/ld_library_path_lib.dsv'
+[4.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/hook/ld_library_path_lib.sh'
+[4.094s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/bin'
+[4.094s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/pkgconfig/robot_control.pc'
+[4.094s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/lib/python3.10/site-packages'
+[4.094s] Level 1:colcon.colcon_core.environment:checking '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/bin'
+[4.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.ps1'
+[4.095s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.dsv'
+[4.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.sh'
+[4.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.bash'
+[4.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/robot_control/package.zsh'
+[4.097s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/robot_control/share/colcon-core/packages/robot_control)
+[4.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[4.107s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.114s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.115s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.115s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.137s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.137s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/local_setup.ps1'
+[4.139s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/_local_setup_util_ps1.py'
+[4.140s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/setup.ps1'
+[4.141s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/local_setup.sh'
+[4.142s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/_local_setup_util_sh.py'
+[4.142s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/setup.sh'
+[4.144s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/local_setup.bash'
+[4.145s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/setup.bash'
+[4.146s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/local_setup.zsh'
+[4.146s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ammar/Robotics/Graduation_Project/ACSAR_ws/install/setup.zsh'
